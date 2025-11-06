@@ -1,0 +1,224 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\newcommand{\R}{\mathbb{R}}
+% Nhúng cấu trúc chung
+\input{preamble.tex}
+
+% Nếu \lecture chưa được định nghĩa, định nghĩa tạm
+\providecommand{\lecture}[3]{%
+  \section*{Lecture #1: #3 (#2)}
+}
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+}
+\begin{document}
+
+\lecture{5}{Fri 12 Sep 2025 6:35}{Lecture 5}
+homework
+
+1. \\
+
+C. $\implies \text{true}$\\
+Beacause: in range $(-3, -2)$ have Max = -4, $x = 0$\\
+B $\implies$ beacause: 16 not in range $(-3,-2)$\\
+
+2. Can have multiple maxima: $\pm 1$ are maxima $\implies -1$ is MAX valued $\implies$ A true \\
+
+3.\\
+A true $\implies$ because $y = f(x)$ is increasing function above $(-\infty, 0]$ and $f(x)$ $\implies$ range of $x$ is $(-\infty, 0]$ $\implies$ when $x$ max ($x = 0$) $\implies f(0) = 1$ $\implies f(x) \le f(0) = 1$ and $f(x) = 1$ $\forall x \in (-\infty, 0]$\\
+
+6.\\
+Distinguish between:\\
++ local maximum / local minimum: in a neighborhood, local\\
++ global maximum / global minimum: overall, global (all range)\\
+C is incorrect because as $y \to \pm \infty$, there is no greatest or least value; there are only two local extrema: a local minimum at -2 and a local maximum at 2. Therefore, A is correct.\\
+
+9.\\
+$y = x \ln(x)$\\
+$y' = \ln(x) + x \cdot \dfrac{1}{x}$\\
+$y' = 0 \iff \ln(x) + 1 = 0$\\
+$\iff \ln(x) = -1$\\
+$\iff x = e^{-1} = \frac{1}{e}$\\
+
+Variation table:\\
+\begin{figure}[h]
+    \centering
+    \incfig{variation-table-1}
+    \caption{Variation table 1}
+    \label{fig:variation-table-1}
+\end{figure}
+
+Min $y = -\frac{1}{e}$ when $x = \frac{1}{e}$, $x \in (0, e)$\\
+
+11.\\
+$D = \R$\\
+$f(x) = \sin^4x-2 \cdot (1-\sin^2x)+1 [\sin^2x+\cos^2x=1]$\\
+$\iff \sin^4x-2+2\sin^2x+1$\\
+Since $t = \sin^2 x \ge 0$ and $\sin^2 x \le 1$, we have $t \in [0,1]$.\\
+Let $\sin^2x = t \in [0,1]$.\\
+$g(t)=t^2+2t-1$\\
+ $g'(t)=2t+2=0$\\
+ $\iff t=-1$\\
+ $f(0)=-1$\\
+  $f(1)=2$\\
+   $\implies 2-1=1$\\
+12.\\
+$D=[-2;2]$\\
+ $y'=\sqrt{4-x^2}-\frac{2x(x+2)}{2\sqrt{4-x^2}} $ \\
+ $\iff y'=\sqrt{4-x^2}-\frac{x(x+2)}{\sqrt{4-x^2}} $ \\
+ $\iff 4-x^2=x^2+2x$\\
+ $\iff 2x^2+2x-4=0$ $\iff$
+\begin{math}
+	\left[ \begin{array}{l}
+	    x = 1\\
+	    x = -2
+	\end{array} \right. 
+\end{math}\\ 
+$f(-2)=0$\\
+ $f(1)=3\sqrt{3} $ \\
+ $f(2)=0$\\
+
+ 14.\\
+ $D =[-2;2]$\\
+ $y'=3-\frac{4x}{2\sqrt{4-x^2}}$ \\
+ $\iff 3-\frac{2x}{\sqrt{4-x^2}} = 0$ \\
+ $\iff 3=\frac{2x}{\sqrt{4-x^2}}$ \\
+ \begin{math}
+ 	\iff 3\sqrt{4-x^2}=2x\\
+	\iff \sqrt{4-x^2}=\frac{2x}{3}\\
+	\iff 4-x^2=\frac{4x^2}{9}\\
+	\iff 36-9x^2=4x^2\\
+	\iff 36-13x^2=0 \iff
+	\left[ \begin{array}{l}
+	    x = \frac{6\sqrt{13}}{13}\\
+	    x=-\frac{6\sqrt{13} }{13}
+	\end{array} \right. 
+ \end{math}\\
+\begin{figure}[ht]
+    \centering
+    \incfig{variable-table-of-ex14}
+    \caption{Variable table of ex14}
+    \label{fig:variable-table-of-ex14}
+\end{figure} \\
+
+\begin{math}
+	\implies a = 13\\
+	\implies b = \frac{6\sqrt{13} }{13} \iff \frac{6}{13} \cdot \sqrt{13}\\
+	\\
+	\iff \frac{6}{13} \cdot \frac{13}{\sqrt{13} }, \text{Note:} (\sqrt{x} = \frac{x}{\sqrt{x} }), (13:13=1)  \\
+	\iff \frac{6}{\sqrt{13} }\\
+	\implies b = 6\\
+	\implies  |a+b| = 13+6=19
+\end{math}\\
+
+21.\\
+ \begin{math}
+	 D = \R / \{1\} \\
+	 y'=\frac{3}{(x+1)^2}\\
+	 y'=0 \iff \frac{3}{(x+1)^2} > 0, \forall x \in \R
+\end{math}
+
+\begin{figure}[ht]
+    \centering
+    \incfig{variable-of-ex-21}
+    \caption{Variable of ex 21}
+    \label{fig:variable-of-ex-21}
+\end{figure}
+-> a true \\
+\begin{figure}[H]
+  \centering
+  \incfig{part-b}
+  \caption{part b}
+  \label{fig:part-b}
+\end{figure}
+
+-> b false \\
+$\implies$ c. true \\
+d. False because $y$ is a linear function that is not continuous at $x = -1$, and $(a;b)$ is an open interval.\\
+22.\\
+a) \[
+\max\limits_{[-3;2]} f(x)=f(2)=6
+\]
+$\implies$ false\\
+b) $6-(-5)=11$\\
+c) Have  $-\infty$ should don't have min in range $[1;+\infty)$\\
+d)\\
+Let $t = 2\sin x-1$\\
+As we know range of $\sin x$ is $[-1;1]$\\
+ $\implies -1 \le \sin x \le 1$\\
+ $\iff -2 \le 2\sin x \le 2$(multiply by 2)\\
+ $-3 \le 2\sin x-1 \le 1$ (subtract 1)\\
+ $\implies t \in [-3;1]$\\
+ $\implies$ Max in range $[-3;1]$ is f(0) = 3 \\
+ $\implies$ true.\\
+ 
+ 23.\\
+ b) $\exists x \in  +\infty$ the function $\implies$ has no maximum on $\R$\\
+ c) 5 + 3 = 8 $\implies$ false \\
+ d)\\
+ $g(x) = f(4x-x^2) + \frac{1}{3}x^3 -3x^2+8x+\frac{1}{3}$ \\
+ $g'(x) = (4-2x) \cdot f'(4x-x^2) + x^2 - 6x + 8$\\
+        = $2(2 -x) \cdot f'(4x-x^2) + (x-2)(x-4)$\\
+	= $2(2-x) \cdot f'(4x-x^2) -(2 -x)(x-4)$ <*>\\ 
+	= $(2-x)\cdot 2 \cdot f'(4x-x^2)-x+4$\\
+	= $(2-x) \cdot 2 \cdot  f'(4x-x^2) +4-x$\\
+	\text{Note: <*> is the crucial transformation step, changing the sign of } $(x-2)$ \text{ to } $-(2-x)$.
+
+	 With $x \in [1;3] \implies 4-x \iff 4 - 3 = 1 \implies 4 - x > 0$\\
+	Let $h(x) = (4x-x^2) \iff h'(x) = 4 - 2x \iff x = 2$\\
+	Change the limits from $x$ to $u$.\\
+	$\implies h(1) = 3$\\
+	$\implies h(2) = 4$\\
+	$\implies h(3) = 3$\\
+	Thus with $x \in [1;3] \implies h(x) \in [3;4]$ should $f'(4x-x^2) \ge 0$\\
+	$\implies 2f'(4x-x^2) + 4 - x \ge 0,  \forall x \in [1;3]$\\
+	We get $g'(x) = 0 \iff 2 - x = 0 \iff x = 2$\\
+	The variation table it as follows:\\
+\begin{figure}[ht]
+    \centering
+    \incfig{variation-table-of-ex-23}
+    \caption{variation table of ex 23}
+    \label{fig:variation-table-of-ex-23}
+\end{figure}\\
+$\implies \max\limits_{[1;3]} g(x) = g(2) = f(4) + 7 = 12$\\
+$\implies$ true\\
+24.\\
+a)From the graph $f'(x)$, we obtain the variation table of $f(x)$ on the interval  $[0;5]$\\
+
+
+\begin{figure}[H]
+    \centering
+    \incfig{ex_24}
+    \caption{ex_24}
+    \label{fig:ex_24}
+\end{figure}
+
+Obtain: $\max\limits_{[0;5]}f(x) = f(3) \implies$ proposition false\\
+b)Beacause function $f$ decreasing on $[4;5]$, we have $\max\limits_{[4;5]} f(x)$ is $f(4)$\\
+$\implies x_0 = 4$\\
+$\iff 2 \cdot 4^2 + 4 = 36 \implies$ proposition true.\\
+c)We get $f(x) \ge f(0),\forall x \in [0;1] \implies -f(x) \le -f(0), \forall x \in [0;1]$ and $-f(x)=-f(0) \iff x = 0 \implies \max\limits_{[0;1]}[-f(x)] = -f(0) \implies$ proposition false.\\
+d)We have :\\
+$f(0) + f(1) -2f(3) = f(5) - f(4)$\\
+$ \iff f(0) - f(5) = -f(4) - f(1) + 2f(3)$\\
+we get $f(3) > f(1) \implies 2f(3) -f(1) > 0, \forall x \in [0;5]$\\
+we get $f(4) < 0 \implies -f(4) > 0 \implies 2f(3) - f(4) > 0, \forall x \in [0;5]$\\
+$\implies f(0) - f(5) > 0$\\
+$\iff f(0) > f(5)$\\
+$\implies \min\limits_{[0;5]}f(x) = f(5)$\\
+$\implies$ Proposition true.
+
+
+ 
+
+
+
+
+
+\end{document}
+

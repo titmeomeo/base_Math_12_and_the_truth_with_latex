@@ -1,0 +1,211 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T5]{fontenc}    
+\usepackage{amsmath, amssymb}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{float}
+
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\lecture}[3]{%
+  \section*{Lecture #1: #3 (#2)}
+}
+
+
+\begin{document}
+
+\lecture{23}{Mon 20 Oct 2025 18:58}{Theme 23}
+
+\section*{Limit when x $\to $  a}
+\textbf{Example 1(page 155):} Calculate $\lim\limits_{x\to 1}\dfrac{1}{|x-1|}$ \par
+We know $|x-1| = $
+\begin{cases}
+    x-1(x\ge 1)  \\
+    1-x(1 > x)
+\end{cases} \par
+$\implies \frac{1}{|x-1|} = $ 
+\begin{cases}
+	\frac{1}{x-1}(x > 1) \\
+        \frac{1}{1 - x}(x < 1)
+\end{cases}\par 
+$\implies \lim\limits_{x\to 1^+}\frac{1}{x-1} =+\infty $
+Explain:
+\begin{cases}
+    1 > 0 \\
+    \lim\limits_{x \to 1^+} = 0^+
+\end{cases}
+\par
+$\implies \lim\limits_{x\to 1^-} \frac{1}{1-x}=+\infty$
+Explain:
+\begin{cases}
+    1 > 0 \\
+    \lim\limits_{x \to 1^-} = 0^+
+\end{cases}
+\par
+$\implies \lim\limits_{x\to 1} = +\infty$ \par
+\textbf{Example 2(page 155):} Calculate $\lim\limits_{x \to 0}\left( 1-\frac{1}{x^2} \right) .$\par
+$\lim\limits_{x \to 0^+}(1- \frac{1}{x^2}) = -\infty$ \par
+$\lim\limits_{x \to 0^-}(1-\frac{1}{x^2}) = -\infty$ \par
+$\implies \lim\limits_{x \to 0} = -\infty$
+ \par
+\textbf{Example 1(page 156):} Calculate $\lim\limits_{x \to 3}(x^2-2x+3)$ \par
+\textbf{Method 1: Nature} \par
+ $\lim\limits_{x \to 3}(x^2-2x+3)$ \par
+ $= \lim\limits_{x \to 3}x^2 - \lim\limits_{x \to 3}2x + \lim\limits_{x \to 3}3$ \par
+ $= \lim\limits_{x \to 3}x \cdot \lim\limits_{x \to 3}x - 2\lim\limits_{x \to 3}x} + \lim\limits_{x \to 3}3$ \par
+ $= 3 \cdot 3 - 2\cdot 3 + 3 $\par
+ $=6$ \par
+ \textbf{Method 2: Quick application:}\par
+ $\lim\limits_{x \to 3}(x^2-2x+3) = 3^2-2\cdot 3+3 = 6 $ \par
+ \textbf{Example 2(page 156):} Calculate $\lim\limits_{x \to 1}\dfrac{2x}{x^2+4}$ \par
+$= \frac{\lim\limits_{x \to 1}2x}{\lim\limits_{x \to 1}x^2+4}$ \par
+$= \frac{2}{5}$ \par
+\textbf{Method 2 : Nature} \par
+$= \frac{2\lim\limits_{x \to 1}x}{\lim\limits_{x \to 1}x^2+\lim\limits_{x \to 1}4}$ \par
+$= \frac{2\cdot 1}{1^2+4}= \frac{2}{5}$ \par
+\textbf{Example 3(page 156):} Calculate $\lim\limits_{x \to 3}\dfrac{x^2+1}{2\sqrt{x}}$ \par
+\textbf{Method 1: Nature } \par
+$\lim\limits_{x \to 3}\frac{x^2+1}{2\sqrt{x}}$ \par
+$= \frac{\lim\limits_{x \to 3}x^2+\lim\limits_{x \to 3}1}{2\cdot \lim\limits_{x \to 3}\sqrt{x} }$\par
+$= \frac{3^2+1}{2\cdot \sqrt{3} } = \frac{5\sqrt{3} }{3}$ \par
+\textbf{Method 2:Quick application}\par
+ $= \frac{3^2+1}{2\cdot \sqrt{3} } = \frac{5}{\sqrt{3} } = \frac{5\sqrt{3} }{3}$ \par
+ \textbf{Example 4(page 156):}\par
+a) \par
+$\lim\limits_{x \to 2}[5f(x)+\left( g(x) \right)^2 ]$ \par
+$= 5\lim\limits_{x \to 2}3 + \lim\limits_{x \to 2}4^2$ \par
+$= 5 \cdot 3 + 4^2 = 31$\par
+b) \par
+ $\lim\limits_{x \to 2}\frac{f(x)-4}{g(x)}$ \par
+$=\frac{3-4}{4} = -\frac{1}{4}$ \par
+\textbf{Method 2: Nature} \par
+$\lim\limits_{x \to 2}\frac{f(x) -4}{g(x)} = \frac{\lim\limits_{x \to 2}f(x) - \lim\limits_{x \to 2}4}{\lim\limits_{x \to 2}g(x)} = \frac{3-4}{4} = -\frac{1}{4}$ \par
+\textbf{Example 5(page 156):} \par
+We have a linear equation in two variable, $f(x)$ and $g(x)$: \par
+$\lim\limits_{x\to 2}3f(x) - 2g(x) = 2$ \par
+$\lim\limits_{x \to 2}2f(x) - g(x) = 3$ \par
+$\iff$
+\begin{cases}
+    $\lim\limits_{x \to 2}3f(x) - 2\lim\limits_{x \to 2}g(x) = 2$ \\
+    $\lim\limits_{x \to 2}2f(x)-\lim\limits_{x \to 2}g(x) = 3$ 
+\end{cases}
+$\iff$
+\begin{cases}
+     f(x) = 4 \\
+      g(x) = 5
+\end{cases}\par
+$\implies \lim\limits_{x \to 2}\{f(x) + g(x)\} = \lim\limits_{x \to 2}f(x) + \lim\limits_{x \to 2}g(x) = 4 + 5  = 9$\par
+\textbf{Example 1 (Page 158):} \par
+$\lim\limits_{x \to 2} \frac{x^2-4}{x^2-3x+2} $ with $x=2$ $\implies$ form $\frac{0}{0}$ \par
+$\lim\limits_{x \to 2}\frac{x^2-4}{x^2-3x+3} = \frac{(x-2)(x+2)}{(x-2)(x-1)} = \frac{x+2}{x-1} = 4$ \par
+$\implies$ choose B.\par
+\textbf{Example 2(page 158):} \par
+The numerator :  $(-1)^2 +(2\cdot -1)+1 = 0 $ \par
+The denominator :  $2\cdot -1+2 = 0$ \par
+$\implies$ form $\frac{0}{0}$ \par
+$\lim\limits_{x \to -1}\frac{x^2+2x+1}{2x+2} = \lim\limits_{x \to -1}\frac{(x+1)^2}{2(x+1)} = \lim\limits_{x \to -1}\frac{x+1}{2} = \frac{-1+1}{2} = \frac{0}{2} = 0$ \par
+$\implies$ choose B. \par
+\textbf{Example 3(page 158):} \par
+The numerator: $2\cdot (\sqrt{3})^2 - 6 = 0 $ \par
+The denominator: $\sqrt{3} - \sqrt{3}  = 0 $ \par
+$\implies$ form $\frac{0}{0}$ \par
+$I = \lim\limits_{x \to \sqrt{3}}\frac{2x^2-6}{x-\sqrt{3}} = \lim\limits_{x \to \sqrt{3} }\frac{2(x^2-3)}{x-\sqrt{3} } =\lim\limits_{x \to \sqrt{3} } \frac{2(x-\sqrt{3})(x+\sqrt{3})  }{x-\sqrt{3} } =\lim\limits_{x \to \sqrt{3}}2\cdot (x+\sqrt{3})} = 2\cdot (\sqrt{3}+\sqrt{3}) = 4\sqrt{3} $ \par
+$\implies a^2 +b^2 = 4^2 + 3^2 = 16 +9 = 25  \implies$ choose D.  \par
+\textbf{Example 4(page 158):}\par
+The numerator : $1^2 + (3a+2)\cdot 1 - 3a-3 = 0$  \par
+The denominator: $1-1=0$ \par
+ $\implies$ from $\dfrac{0}{0}$ \par
+ We transform the numerator : \par
+ $x^2+(3a+2)x-3a-3)$ \par
+  $= x^2+3ax+2x-3a-3$\par
+   $=(x^2+2x-3)+(3ax-3a)$ \par
+   $= (x-1)(x+3)+3a(x-1)$ \par
+   $= (x-1)[(x+3) +3a]$ \par
+    $=(x-1)(x+3a+3)$ \par
+$\implies \lim\limits_{x \to 1}\frac{x^2+(3a+2)x-3a-3}{x-1} = \lim\limits_{x \to 1}\frac{(x-1)(x+3a+3)}{x-1}= \lim\limits_{x \to 1}(x+3a+3) = 1 + 3a + 3 = 3a + 4$
+$\implies$ choose C. \par
+\textbf{Example 5(page 158):}\par
+$\implies$ form $\dfrac{0}{0}$ \par
+$\implies$ form $\sqrt{A} - B \implies$ using technique "multiplying by the conjugate." \par
+$\implies \lim\limits_{x \to 5}\frac{\sqrt{3x+1}-4 }{3-\sqrt{x}+4 }= \lim\limits_{x \to 5}\frac{(\sqrt{3x+1}-4)(\sqrt{3x+1}+4)(3+\sqrt{x+4}) }{(\sqrt{3x+1}+4)(3-\sqrt{x+4})(3+\sqrt{x+4})} = \lim\limits_{x \to 5}\frac{(3x+1-4^2)(3+\sqrt{x+4})}{(\sqrt{3x+1}+4) [3^2-(x+4)]}=  \lim\limits_{x \to 5}\frac{(3x-15)(3+\sqrt{x+4})}{(\sqrt{3x+1}+4)(5-x)}=\lim\limits_{x \to 5}\frac{3(x-5)(3+\sqrt{x+4})}{(\sqrt{3x+1}+4)(5-x)}= \lim\limits_{x \to 5}\frac{-3(3+\sqrt{x+4})}{\sqrt{3x+1}+4} = \frac{-3(3+\sqrt{5}+4) }{\sqrt{3\cdot 5+1}+4 }=-\frac{9}{4}$ \par
+\textbf{Example 6(page 158):} \par
+$\implies$ form $\frac{0}{0}$ \par
+we know :  $\sqrt[3]{1} = 1 $ \par
+we know : $a^3+b^3=(a+b)(a^2-ab+b^2)$ \par
+we know :  $a^3-a^3=(a-b)(a^2+ab+b^2)$ \par 
+$\implies$ we have conjugate expression : $(\sqrt[3]{1+4x})^2 + (\sqrt[3]{1+4x} \cdot 1) + 1^2$ \pa
+$\implies \lim\limits_{x \to 0}\frac{\sqrt[3]{1+4x}-1 }{x}  = \lim\limits_{x \to 0}\frac{(\sqrt[3]{1+4x}-1)\cdot  (\sqrt[3]{1+4x})^2 + (\sqrt[3]{1+4x} \cdot 1) + 1^2}{x \cdot [(\sqrt[3]{1+4x})^2 + (\sqrt[3]{1+4x} \cdot 1) + 1^2]}$
+$= \lim\limits_{x \to 0}\frac{1+4x - 1}{x\cdot [(\sqrt[3]{1+4x})^2 + (\sqrt[3]{1+4x} \cdot 1) + 1^2]} = \lim\limits_{x \to 0}\frac{4}{(\sqrt[3]{1+4x})^2 + (\sqrt[3]{1+4x} \cdot 1) + 1^2} = \frac{4}{3}$ \par
+\textbf{Example 7(page 158):}\par
+$\frac{1}{2-2} \cdot  (\frac{1}{2+4}-\frac{1}{2^2+2})\implies$form $0\cdot \infty$ \par
+$\implies \left( \frac{1}{x+4} - \frac{1}{x^2+x}\right) = \left( \frac{1}{x+4} - \frac{1}{x(x+1)} \right)  $ 
+$= \frac{x(x+1)}{(x+4)[x(x+1)]} - \frac{(x+4)}{(x+4)[x(x+1)]}$ 
+$= \frac{x^2-4}{(x+4)[x(x+1)]}$ 
+$= \frac{(x-2)(x+2)}{(x+4)[x(x+1)]}}}}$ \par
+$\implies \lim\limits_{x \to 2}\frac{1}{x-2}\cdot \left( \frac{1}{x+4}-\frac{1}{x^2+x} \right)$ 
+$=  \lim\limits_{x \to 2}\frac{1}{x-2}\cdot \left(  \frac{(x-2)(x+2)}{(x+4)[x(x+1)]}}} \right) $ 
+$=\lim\limits_{x \to 2} \frac{(x-2)(x+2)}{(x-2)(x+4)[x(x+1)]}$ 
+$=\lim\limits_{x \to 2} \frac{(x+2)}{(x+4)[x(x+1)]}$ 
+$= \frac{2 + 2}{(2+4)\cdot [2(2+1)]}=\frac{1}{9}$ \par
+\textbf{Example 8(page 158):} \par
+We know : $\lim\limits_{x \to a}\{f(x) \cdot  g(x) \}= \lim\limits_{x \to a}f(x) \cdot \lim\limits_{x \to a}g(x) = \alpha \cdot \beta$ \par
+$\implies \lim\limits_{x \to 2}\frac{(x^2+2x)\cdot f(x)}{x-2}=9 \iff \lim\limits_{x \to 2}\left( x^2+2x \right) \cdot  \lim\limits_{x \to 2}\frac{f(x)}{x-2} = 9 $ \par
+$\implies \lim\limits_{x \to 2}\frac{f(x)}{x-2} = \frac{9}{8}$ \par
+$\implies \lim\limits_{x \to 2}\frac{\left( x^3+4x+8 \right) \cdot f(x)}{x-2} = \lim\limits_{x \to 2}\left( x^3+4x+8 \right)  \cdot  \lim\limits_{x \to 2}\frac{f(x)}{x-2} = 24 \cdot \frac{9}{8} = 27$ \par
+\textbf{Example 9(page 158):}\par
+ $I = \lim\limits_{x \to 3}\frac{x-3}{\sqrt{x+a} + b } = 6$\par
+We can see the numerator : $3-3=0 \implies I $ is definitely in the form $\frac{0}{0}$ , because the $\frac{0}{0}$ form, after simplification, will result in a finite value.\par
+$\implies \sqrt{x+a} + b = 0  $ \par
+$\implies \sqrt{3+a}+b = 0 $ \par
+$\implies b = -\sqrt{3+a}$ \par
+$\implies \lim\limits_{x \to 3}\frac{x-3}{\sqrt{x+a}+b} = \lim\limits_{x \to 3}\frac{x-3}{\sqrt{x+a}-\sqrt{3+a}} = \frac{(x-3)\cdot \left( \sqrt{x+a} + \sqrt{3+a} \right)}{\left(  \sqrt{x+a} - \sqrt{3+a}  \right) \cdot \left( \sqrt{x+a} + \sqrt{3+a} \right)} = \lim\limits_{x \to 3}\frac{(x-3) \cdot \left( \sqrt{x+a} + \sqrt{3+a}   \right) }{(x+a) - (3+a)} = \lim\limits_{x \to 3}\frac{(x-3)\cdot (\sqrt{x+a} + \sqrt{3+a})}{(x-3)} = \lim\limits_{x \to 3}\left( \sqrt{x+a} + \sqrt{3+a} \right) = 2\sqrt{3+a} = 6  $ \par
+$\implies \sqrt{3+a} = 3$ \par
+$\implies 3 + a = 9 \implies a = 6 \implies b = -3 \implies a - b = 6 -(-3) = 9$\par
+\textbf{Additional practice exercises(page 159):}\par
+\textbf{BON 1:} \par 
+form $\frac{0}{0}$ \par
+$\implies \lim\limits_{x \to 1}\dfrac{x-1}{x^2+2x-3}= \lim\limits_{x \to 1}\dfrac{x-1}{(x-1)(x+3)} = \lim\limits_{x \to 1}\dfrac{1}{x+3} = \dfrac{1}{4}$ \par
+\textbf{BON 2:}\par
+form $\frac{0}{0}$ \par
+$\implies \lim\limits_{x \to 2}\dfrac{x^3-8}{x-2}=\lim\limits_{x \to 2}\dfrac{x^3-2^3}{x-2} = \lim\limits_{x \to 2}\dfrac{(x-2)(x^2+2x+2^2)}{(x-2)}  = \lim\limits_{x \to 2}x^2+2x+2^2 = 2^2+2\cdot 2 + 4 = 12$ \par
+\textbf{BON 3:}\par
+form $\frac{0}{0}$ \par
+$\implies \lim\limits_{x \to -1}\frac{x^3+2x^2+x}{x^2-1}=\lim\limits_{x \to -1}\frac{x(x^2+2x+1)}{(x-1)(x+1)} = \lim\limits_{x \to -1}\frac{x(x+1)^2}{(x-1)(x+1)} = \lim\limits_{x \to -1}\frac{x(x+1)}{(x-1)} = 0$ \par
+\textbf{BON 4:}\par
+form  $\frac{0}{0}$ \par
+$\implies \lim\limits_{x \to 1}\frac{x-1}{\sqrt{x}-1 } = \lim\limits_{x\to 1}\frac{(x-1)(\sqrt{x}+1)}{\left( \sqrt{x} -1  \right) \left( \sqrt{x}+1  \right)} = \lim\limits_{x \to 1}\frac{(x-1)\left( \sqrt{x}+1  \right) }{\left( x-1 \right) } = \lim\limits_{x \to 1}\left( \sqrt{x} + 1  \right) = 2 $ \par
+\textbf{BON 5:} \par
+form $\frac{0}{0}$ \par
+$\implies \lim\limits_{x \to 1}\frac{\sqrt{x+8}-3 }{x^2-1} = \lim\limits_{x \to 1}\frac{\left( \sqrt{x+8} -3  \right) \left( \sqrt{x+8} +3 \right)  }{\left( x-1 \right)\left( x+1 \right) \left( \sqrt{x+8} + 3  \right)  } = \lim\limits_{x \to 1}\frac{\left( x-1 \right) }{\left( x-1 \right)\left( x+1 \right) \left( \sqrt{x+8}+3  \right)} = \lim\limits_{x \to 1}\frac{1}{\left( x+1 \right)\left( \sqrt{x+8}+3  \right)   }=\frac{1}{12}$ \par
+\textbf{BON 6:}\par
+form $\infty \cdot 0 \implies$ convert to form $\frac{0}{0}$ \par
+$\implies \left( \frac{1}{\sqrt{x+1}} - 1 \right)  = \frac{1}{\sqrt{x+1}} - \frac{\sqrt{x+1}}{\sqrt{x+1} } = \frac{1-\sqrt{x+1} }{\sqrt{x+1} }$ \par
+$\implies \lim\limits_{x \to 0}\frac{1}{x}\left( \frac{1}{\sqrt{x+1} } -1 \right) = \lim\limits_{x \to 0}\frac{1}{x} \left( \frac{1-\sqrt{x+1} }{\sqrt{x+1} } \right)  = \lim\limits_{x \to 0} \frac{1-\sqrt{x+1}}{x\cdot (\sqrt{x+1})}  \implies$ we have form $\frac{0}{0}$ \par
+$\implies \lim\limits_{x \to 0}\frac{1-\sqrt{x+1}}{x(\sqrt{x+1})} = \lim\limits_{x \to 0}\frac{\left( 1-\sqrt{x+1}  \right)\left( 1+\sqrt{x+1}  \right)  }{x \left( \sqrt{x+1}  \right)\left( 1+\sqrt{x+1}  \right) } = \lim\limits_{x \to 0}\frac{1-(x+1)}{x \left( \sqrt{x+1}  \right)\left( 1+\sqrt{x+1}  \right) } = \lim\limits_{x \to 0}\frac{-x}{x \left( \sqrt{x+1}  \right)\left( 1+\sqrt{x+1}  \right)}=\lim\limits_{x \to 0}\frac{-1}{ \left( \sqrt{x+1}  \right)\left( 1+\sqrt{x+1}  \right) } = -\frac{1}{2}$ \par
+\textbf{BON 7:}\par
+$I = \lim\limits_{x \to 2}\frac{f(x)-3x}{x-2} = 3 = c \implies I$ have form $\frac{0}{0}$ after that , remove the indeterminate form $\frac{0}{0}$ to get a result of 3, hence, the constant $c=3$ \par
+ $\implies I$ Sure have form $\frac{0}{0}$ \par
+$\implies f(x) -3x = 0 \implies f(2) = 6$\par
+$\implies \lim\limits_{x \to 2}\frac{[f(x)-3x]\cdot [f(x)+2]}{x^2-4} = \lim\limits_{x \to 2}\frac{f(x)-3x}{(x-2)} \cdot \lim\limits_{x \to 2}\frac{f(x)+2}{(x+2)} =3\cdot \frac{8}{4} = 6 $\par
+\textbf{Note:}\par
+All the addition, subtraction, multiplication, and division properties of limits as
+\( x \to a \)
+are valid only when the two individual limits both exist (and are finite numbers). \par
+\textbf{BON 8:}\par
+$I = \lim\limits_{x \to 0}\frac{\sqrt{x^2+ax+b}-a }{\sqrt{x+a}-\sqrt{a-x}  } = 1$\par
+We can see denominator: $\sqrt{0 + a} - \sqrt{a-0} = \sqrt{a} - \sqrt{a}=0\implies I$ is definitely in the form $\frac{0}{0}$, because the $\frac{0}{0}$ form, after simplification, will result in a finite value. \par
+$\implies \sqrt{x^2+ax+b}-a=0$ \par
+$\iff \sqrt{b} - a = 0$ \par
+$\implies a = \sqrt{b} \iff b = a^2$\par
+$\implies I = \lim\limits_{x \to 0}\frac{\sqrt{x^2+ax+a^2}-a }{\sqrt{x+a} -\sqrt{a-x}} =\lim\limits_{x \to 0}\frac{\left( \sqrt{x^2+ax+a^2} -a  \right)\left( \sqrt{x^2+ax+a^2}+a  \right)\left( \sqrt{x+a} + \sqrt{a-x}\right)}{\left( \sqrt{x+a}-\sqrt{a-x}   \right)\left( \sqrt{x+a}+\sqrt{a-x}   \right)\left( \sqrt{x^2+ax+a^2}+a  \right)} = \lim\limits_{x \to 0}\frac{x\left( x+a \right)\left( \sqrt{x+a}+\sqrt{a-x}\right)}{2x\left( \sqrt{x^2+ax+a^2}+a\right)}=\lim\limits_{x \to 0}\frac{\left( x+a \right)\left( \sqrt{x+a}+\sqrt{a-x} \right)}{2\left( \sqrt{x^2+ax+a^2}+a\right)} = \lim\limits_{x \to 0}\frac{\left( 0+a \right)\left( \sqrt{0+a}+\sqrt{a-0} \right)}{2\left( \sqrt{0^2+a\cdot 0+a^2}+a\right)} =\frac{2a\sqrt{a}}{4a} =\frac{\sqrt{a} }{2} = 1 \implies a = 4 \implies b = 16 \implies a+ b = 20$
+
+   
+
+
+
+
+
+
+\end{document}

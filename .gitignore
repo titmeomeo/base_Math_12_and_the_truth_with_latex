@@ -1,0 +1,33 @@
+# Ignore LaTeX build files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.lol
+*.nav
+*.snm
+*.vrb
+
+# Backup & temp files
+*~
+*.bak
+*.swp
+*.tmp
+*.te?~
+*.tez~
+*.tey~
+*.tex.latexmain
+*.q.log
+
+
+# Mac / system files
+.DS_Store
+Thumbs.db
+

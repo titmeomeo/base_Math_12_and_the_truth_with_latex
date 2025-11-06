@@ -1,0 +1,76 @@
+\documentclass[a4paper,12pt]{article}  % tài liệu kiểu bài báo
+\usepackage[utf8]{inputenc}             % Để nhập liệu UTF-8 (nhập tiếng Việt dễ hơn)
+\usepackage[T5]{fontenc}                % Bộ mã font tiếng Việt
+\usepackage{amsmath, amssymb}           % Các gói toán học cơ bản
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{xifthen}                    % dùng \ifthenelse và \isempty cho lệnh \lecture
+
+% --- Định nghĩa lệnh \lecture ---
+\makeatletter
+\newcommand{\lecture}[3]{%
+  \ifthenelse{\isempty{#3}}{%
+    \section*{Lecture #1}%
+  }{%
+    \section*{Lecture #1: #3}%
+  }%
+  \marginpar{\small\textsf{#2}}%
+}
+\makeatother
+
+\begin{document}
+
+\lecture{9}{Sat 11 Oct 2025 10:57}{Lecture bonus Thales theorem}
+
+\section*{Mẹo Ghi Nhớ: Tam Giác Đồng Dạng}
+
+Tài liệu này tập trung vào 2 kỹ năng chính: (1) Cách gọi tên tam giác để lập tỉ lệ đúng và (2) Chiến lược chọn tỉ lệ để giải toán thông minh.
+
+\subsection{Cách Gọi Tên và Lập Tỉ Lệ Chính Xác}
+
+Quy tắc quan trọng nhất khi xét hai tam giác đồng dạng là \textbf{thứ tự các đỉnh phải tương ứng với các góc bằng nhau}.
+
+\subsubsection*{Ví dụ với $\triangle AHC$ và $\triangle B'KC$}
+\begin{enumerate}
+    \item \textbf{Tìm các cặp góc bằng nhau:}
+    \begin{itemize}
+        \item Góc vuông: $\angle H = \angle K = 90^\circ$. Suy ra: \textbf{H tương ứng với K}.
+        \item Góc đối đỉnh: $\angle ACH = \angle B'CK$. Suy ra: \textbf{C tương ứng với C}.
+        \item Cặp còn lại: Suy ra: \textbf{A tương ứng với B'}.
+    \end{itemize}
+
+    \item \textbf{Viết đúng tên tam giác:}
+    Từ sự tương ứng trên, nếu ta gọi tên tam giác thứ nhất là $\triangle AHC$, thì tam giác thứ hai phải được gọi là $\triangle B'KC$.
+    $$ \triangle AHC \sim \triangle B'KC $$
+
+    \item \textbf{Lập tỉ lệ một cách tự động:}
+    Khi đã có tên đúng, bạn chỉ cần bắt cặp các chữ cái theo đúng thứ tự (đầu-đầu, cuối-cuối, đầu-cuối) để có bộ 3 tỉ lệ bằng nhau:
+    $$ \frac{AH}{B'K} = \frac{HC}{KC} = \frac{AC}{B'C} $$
+    Đây là bộ tỉ lệ đầy đủ và chính xác.
+\end{enumerate}
+
+\subsection{Tại Sao Chỉ Dùng 2/3 Tỉ Lệ \& Cách Chọn Thông Minh}
+
+Một phương trình chỉ cần \textbf{hai vế} bằng nhau để giải. Bộ ba tỉ lệ $A=B=C$ cho chúng ta 3 lựa chọn phương trình: $A=B$, $B=C$, hoặc $A=C$. Ta chỉ cần chọn một phương trình thuận tiện nhất.
+
+\subsubsection*{Chiến lược 3 bước để chọn tỉ lệ thông minh}
+\begin{enumerate}
+    \item \textbf{Tìm "Tỉ Lệ Mỏ Neo":} Là tỉ lệ mà bạn biết rõ giá trị của cả tử và mẫu.
+
+    \textit{Trong ví dụ của chúng ta, đó là $\frac{AH}{B'K} = \frac{3}{5}$. Đây là một hằng số.}
+
+    \item \textbf{Tìm "Tỉ Lệ Mục Tiêu":} Là tỉ lệ chứa ẩn số $x$ mà bạn đang cần tìm.
+
+    \textit{Trong ví dụ, đó là $\frac{HC}{KC} = \frac{x}{2-x}$.}
+
+    \item \textbf{Bỏ qua "Tỉ Lệ Phức Tạp":} Là tỉ lệ chứa các cạnh bạn không biết và việc tính toán chúng rất rắc rối (ví dụ: các cạnh huyền phải dùng định lý Pythagoras, chứa căn bậc hai).
+
+    \textit{Trong ví dụ, đó là $\frac{AC}{B'C}$. Ta không cần đến nó.}
+\end{enumerate}
+
+\subsubsection*{Kết luận}
+Bằng cách cho \textbf{"Tỉ Lệ Mỏ Neo" = "Tỉ Lệ Mục Tiêu"}, ta tạo ra phương trình đơn giản nhất để giải bài toán:
+$$ \frac{3}{5} = \frac{x}{2-x} $$
+Đây là lý do chúng ta chỉ cần dùng 2 trong 3 tỉ lệ có sẵn.
+
+\end{document}
+

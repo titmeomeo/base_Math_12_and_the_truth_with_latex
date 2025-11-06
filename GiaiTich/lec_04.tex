@@ -1,0 +1,448 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{xifthen}  % để dùng \ifthenelse và \isempty trong định nghĩa \lecture
+\usepackage{graphicx} % nếu có hình ảnh
+\usepackage{tikz}
+\usepackage{tkz-tab}
+% Định nghĩa lại lệnh \lecture nếu bạn dùng nó
+\makeatletter
+\newcommand{\lecture}[3]{%
+  \ifthenelse{\isempty{#3}}{%
+    \section*{Lecture #1}%
+  }{%
+    \section*{Lecture #1: #3}%
+  }%
+  \marginpar{\small\textsf{#2}}%
+}
+\makeatother
+
+\begin{document}
+
+\lecture{4}{Sun 12 Oct 2025 10:57}{Lecture 04} 
+
+
+\title{Bài tập tự luyện: cực trị của hàm số — phần 2}
+\author{Phi Nguyen}
+\date{\today}
+\maketitle
+
+\textbf{Câu 1}.  
+\[
+x = 2
+\]
+
+\[
+x = \frac{1}{2}
+\]
+
+\[
+x = \pm 2
+\]
+
+\[
+x = 0
+\]
+
+$x=2$ là nghiệm bội chẵn — lặp — nên không phải điểm cực trị.  
+→ Có 3 cực trị. \\
+
+\textbf{Câu 4.}\\
+$y=x^4 -6x^2+8x+1, \quad D = \mathbb{R}$\\
+$y' = 0 \Leftrightarrow 4x^3 -12x + 8 = 0$\\
+$\Leftrightarrow x = -2 \ \text{hoặc} \ x = 1$\\
+
+% … Phần còn lại nội dung bạn đã viết …
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{photo_2025-08-21_08-16-17.jpg}
+    \caption{Chia đa thức}
+\end{figure}
+
+Ta thu được biểu thức $x^2+x-2$.\\
+- Ta lại gặp khó khăn khi đưa biểu thức này về nhân tử vì chúng không có nhân tử chung.\\
+- Ta sẽ quay lại bản chất vấn đề ta muốn viết $x^2+x-2$ về dạng $(x + m)(x + n)$\\
+- Khai triển ta có :\\
+$x(x+n)+m(x+n)=$\\
+$x^2+xm+mx +mn=$\\
+$x^2+(m+n)x+mn$\\
+- So sánh $x^2+x-2$ với $x^2+(m+n)x+mn$ ta thấy ta phải tìm 2 số $m+n = 1$ và $m.n=-2$\\
+$\Rightarrow$ 2 số đó là -2 và 1 và 2 số này chính là 2 nhân tử $(x + 2),(x -1)$\\
+$\Rightarrow$ $x^2+x-2 =(x + 2)(x -1)$\\
+- Tổng kết lại :\\
+$y'=4x^3-12x+8 = (x-1)(x + 2)(x -1) \Leftrightarrow (x-1)^2(x+2)$\\
+- Vậy $x = 1$ là nghiệm kép nên không tính là điểm cực trị, ta chỉ có một nghiệm duy nhất mà tại đó đạo hàm đổi dấu đó là $x = -2 \Rightarrow$ đáp án là B.1\\
+\textbf{Câu 6}. $f(x) = 4x^3+x^4-1$\\
+- Ta lại đến với một câu mũ 3 nữa :) câu này mình sai nhiều là vì tin tưởng máy tính giải ra 2 nghiệm là x = 0 và x = -3 và cứ thể điền dấu và kết luận đối dấu ở 2 điểm là x = 0 và x = -3 nhưng sự thật phũ phàng khi dùng máy tính lỏ không hiểu bản chất và sai hay cùng mình làm lại câu này nhé :).\\
+- Để làm bài này ta lại sử dụng một công cụ mạnh mẽ đó là đa thức ( kiến thức lớp 8 mình còn chưa thạo)\\
+$f'(x) = 12x^2+4x^3$\\
+- Ở đây ta nhận thấy nhân tử chung ở đây là $4x^2$ vậy nên ta phân tích thành:\\
+$f'(x) = 12x^2+4x^3=4x^2(3-x)$\\
+$\Rightarrow$ ta có 3 nghiệm: $\Rightarrow$ Đáp án B.\\
+- Nghiệm kép x = 0\\
+- Nghiệm bội lẻ x = -3\\
+$\Rightarrow f'(x)$ chỉ đổi dấu từ "cộng" sang "trừ" tại x = -3\\
+- Hoặc có $f'(-3) = 0$,$f''(x) = 24x+12x^2 \Rightarrow f''(-3) = 36 > 0 \Rightarrow$ nên $x = -3$ là cực tiểu.\\
+\textbf{Câu 9. $y= 2x^3-3x^2+4$}\\
+$y' = 6x^2-6x$\\
+$y'=0 \Leftrightarrow x = 1$ hoặc $x = 0$\\
+- Ta đã biết điểm cực trị có dạng tọa độ $M(x_0; f(x_0)$\\
+- Từ bước đạo hàm ta đã tìm được tọa độ $x_0$ giờ thay $x_0$ vào hàm $f(x)$ ban đầu để tìm $y$ nào.\\
+- bước này khá easy nên mình sẽ skip và sau khi thay ta có :\\
+$M(0;4),N(1;3)$\\
+- Áp dụng công thức tính khoảng cách : $\sqrt{(x_N-x_M)^2+(y_N-y_M)^2}$\\
+- Và ta được khoảng cách $MN = \sqrt{2} \Rightarrow$ Đáp án A.\\
+\textbf{Câu 11. $y = sinx -\sqrt{3}cosx-\dfrac{3x-2}{3}$}\\
+TXĐ D = $\mathbb{R}$\\
+$y'=cosx+\sqrt{3}sinx -1$\\
+$y'=0\Leftrightarrow cox+\sqrt{3}sinx-1=0$\\
+$\Leftrightarrow cosx +\sqrt{3}sinx=1$(Dạng $asinx+bcosx=c$)\\
+-Kiểm tra điều kiện:\\
+$
+\begin{cases}
+a^2+b^2=1^2+(\sqrt{3})^2=4\\
+c^2=1^2=1
+\end{cases}\\
+$
+$\Rightarrow 4 > 1$ nên phương trình có nghiệm\\
+- Đặt $R = \sqrt{a^2+b^2}=\sqrt{1^2+(\sqrt{3})^2}=\sqrt{4}=2$\\
+- Chia cả hai vế của phương trình cho 2:\\
+$\Rightarrow \dfrac{\sqrt{3}}{2}sinx+\dfrac{1}{2}cosx=\dfrac{1}{2}$\\
+- Ta nhận thấy $\dfrac{\sqrt{3}}{2}=cosx\left(\dfrac{\pi}{6}\right)$;$\dfrac{1}{2}=sin\left(\dfrac{\pi}{6}\right)$\\
+$\Rightarrow cos\left(\dfrac{\pi}{6}\right)sinx+sin\left(\dfrac{\pi}{6}\right)cosx=\dfrac{1}{2}$\\
+- Áp dụng công thức cộng: $sin(A+B) = sin(A)cos(B)+cos(A)sin(B)$\\
+$\Rightarrow sin\left(x+\dfrac{\pi}{6}\right)=\dfrac{1}{2}$\\
+\[
+\Leftrightarrow
+\left[
+\begin{array}{l}
+x+\dfrac{\pi}{6}=\dfrac{\pi}{6}+k2\pi\\
+x+\dfrac{\pi}{6}=\pi-\dfrac{\pi}{6}=\dfrac{5}{6}\pi+k2\pi
+\end{array}
+\right.
+\;\;\Leftrightarrow\;\;
+\left[
+\begin{array}{l}
+x = k2\pi \\
+x = \dfrac{2}{3}\pi + k2\pi
+\end{array}
+\right.
+\]
+- Ta sẽ xét dấu sử dụng phương pháp $y''$\\
+$y''=-sinx+\sqrt{3}cosx$\\
+$y''=0 \Leftrightarrow-sinx+\sqrt{3}cosx=0$\\
+- Tại $x=k2\pi$ (Thay$k=0$)\\
+$y''=(k2\pi)=-sin(k2\pi)+\sqrt{3}cos(k2\pi)=-0+\sqrt{3}(1)=\sqrt{3}$\\
+- Vì $y''=\sqrt{3}>0, \Rightarrow$Hàm số đạt cực tiểu tại $x_{CT}=k2\pi$\\
+- Tại $x = \dfrac{2}{3}\pi+k2\pi$(Note:cứ cho k = 0 kệ nó)\\
+$y''(\dfrac{2}{3}\pi+k2\pi)=-sin\left(\dfrac{2}{3}\pi\right)+\sqrt{3}cos\left(\dfrac{2}{3}\pi\right)=-\sqrt{3}$\\
+- Vì $y''=-\sqrt{3}<0 \Rightarrow$Hàm số đạt cực tiểu tại $x_{CT} =\dfrac{2}{3}\pi+k2\pi$\\
+$\Rightarrow$ Đáp án A.\\
+\textbf{Câu 14.}\\
+- Câu này làm tương tự câu 9 nhưng ta chỉ dừng lại ở bước tìm tọa độ.\\
+\textbf{Câu 15.}$y=\dfrac{-1}{3}x^3+\dfrac{3}{2}x^2-2x+1$\\
+- Tính đạo hàm để tìm tọa độ x:\\
+$y'=-x^2+3x-2$\\
+$y'=0 \Leftrightarrow y'=-x^2+3x-2=0$\\
+\[
+\Leftrightarrow
+\left[
+\begin{array}{l}
+x = 1\\
+x = 2
+\end{array}
+\right.
+\]\\
+- Thay ngược trở lại f(x) để tìm y bước này tương tự câu 9 và 10 nên mình không trình bày chi tiết nữa.\\
+Sau khi thay ta được các tọa độ sau:\\
+$\Rightarrow A\left(1;\dfrac{1}{6}\right),B\left(2;\dfrac{1}{3}\right)$\\
+- Khi đã có A và B ta sẽ tiến hành tính toán hướng đi từ A đến B hay còn được kí hiệu là $\overrightarrow{u}$(vector chỉ phương) bằng cách tính vector AB kí hiệu là: $\overrightarrow{AB}$\\
+$ \Rightarrow \overrightarrow{u}=\overrightarrow{AB}\left(1;\dfrac{1}{6}\right)$\\
+- Từ vector u ta đã biết được hướng của A đến B giờ ta cần đi kiếm tra xem gốc tọa độ hay O(0;0) có đi qua A, B hay không.\\
+- Bằng cách nào ?\\
+- Trả lời: như ta đã biết vector pháp tuyến(VTPT) kí hiệu:$\overrightarrow{n}$vuông góc với vector chỉ phương $\overrightarrow{u}$ nên tích vô hướng chúng luôn = 0.\\
+- Chứng minh:\\
+1. Giả sử:\\
++ Ta có một vector chỉ phương $\overrightarrow{u}(a;b)$ bất kì,ta chọn vector pháp tuyến tương ứng là $\overrightarrow{n}(-b;a)$\\
+2.Tính toán:\\
+ $\overrightarrow{u} \cdot \overrightarrow{v} = (a \cdot -b)+(b\cdot a) = -ab+ab= 0$\\
+3.Kết luận\\
+- Vì kết quả ở phép tính trên bằng 0, nên theo định nghĩa của tích vô hướng ta có thể kết luận $\overrightarrow{u} \perp \overrightarrow{v}$. \\
+  $\Rightarrow$ Điều cần chứng minh.\\
+  Ví dụ:\\
+ - Thay $x = -1$, $y = 1$ và $z = 1$; $g = 1$ lần lượt vào $A, B$ ta được:\\
+ $A \cdot B = (-1 \cdot 1)+(1 \cdot 1) = 0$\\
+ - Sau khi biết điều này ta có thể lập phương trình từ VTPT và cho bằng 0 nếu điểm nào đi qua VTPT $\Rightarrow$ đi qua vector chỉ phương $\Rightarrow$ đi qua A, B và bằng 0.\\
+ Từ vector chỉ phương $\overrightarrow{u}\left(1;\dfrac{1}{6}\right) \Rightarrow \overrightarrow{n}\left(-\dfrac{1}{6};1\right)$\\
+ - Để cho $\overrightarrow{n}$ đẹp hơn ta nhân với 6 $\Rightarrow \overrightarrow{n}=(-1;6)$
+ - Lập phương trình sử dụng công thức khi biết VTPT:\\
+ - Ta áp dụng với VTPT và một điểm A hoặc B lần này mình chọn điểm A vì vector pháp tuyến đã định hướng và A, B nằm trên cũng một đường  thẳng(điều này là thừa nhận điều có thật nên không cần chứng minh).
+ Dạng tổng quát của phương trình đường thẳng có dạng $ax+by+c=0$:\\
+ - Công thức: $a(x-x_0)+b(y-y_0)=0$\\
+ - Áp dụng công thức ta có:\\
+ $1(x-1)-6\left(y-\dfrac{1}{6}\right)=0$\\
+ $\Leftrightarrow x-1-6y+1=0$\\
+ $\Leftrightarrow x -6y=0$\\
+ - Thay $O(0;0)$ vào phương trình ta có:
+ $0-6 \cdot0=0 \Rightarrow$ Đúng $\Rightarrow O$ nằm trên AB nên khoảng cách từ O tới AB chính là = 0.\\
+ - Hay viết ngắn gọn hơn: $O \in AB \Rightarrow d(O;AB) = 0$\\
+ \textbf{Câu 19}.\\
+ Biết $A\left(0;-2\right), B\left(\dfrac{1}{2};-\dfrac{17}{8}\right)$ là các điểm cực trị của đồ thị hàm số $y=ax^4+bx^2+c(*)$. Tính giá trị của hàm số tại điểm có hoành độ bằng 1.\\
+ Lời giải:\\
+ - Giả sử $y'= 0 \Leftrightarrow y'=4ax^3+2bx=0(1)$\\
+ - Như ta đã biết điểm cực trị của hàm số có dạng tổng quát như nhau $M(x_0;y_0)$ hay có thể viết cách khác $M(x_0;f(x_0))$\\
+ - Từ dữ kiện đề bài cho điểm cực trị của hàm số ta rút được hai điều:\\
+ 1.Khi thay $x_0$ vào $y$ ta thu được $y_0$\\
+ Công thức: $y(x_0)=y_0$\\
+ 2. $x_0$ là các điểm làm cho đạo hàm của hàm số bằng 0 vậy suy ra:\\
+ Công thức: $y'(x_0)=0$\\
+ - Hai điều này được khai tác hoàn toàn từ định nghĩa cơ bản, có thể đọc lại sách.\\
+ -Thực chất bài toán ở đây là đi tìm hệ số $a, b, c$ bằng cách thay cực trị đã cho vào $y$, $y'$ ta sẽ giải quyết được nó.\\
+ -Giờ ta sẽ tiến hành áp dụng phân tích vào bài toán:\\
+ - Với $A(0;-2)$: $\Leftrightarrow x =0; y = -2$\\
+ $\Rightarrow$ thay vào $(*):$ $-2=a \cdot0^3+b \cdot 0^2 +c \Rightarrow c =-2$\\
+ $\Rightarrow$ thay vào $(1): 4a \cdot0^3+2b \cdot0=0 \Rightarrow$Điều này đúng nhưng với phương trình này ta không thu được gì nên ta sẽ thử với điểm tiếp theo.\\
+ - Với $B\left(\dfrac{1}{2};-\dfrac{17}{8}\right), c=-2:$\\
+ $\Rightarrow$Thay vào $(*): -\dfrac{17}{8}=a \cdot \left(\dfrac{1}{2}\right)^4+b \cdot\left(\dfrac{1}{2}\right)^2-2$\\
+ $\Leftrightarrow \dfrac{1}{16}a+\dfrac{1}{4}b-2=-\dfrac{17}{8} \Leftrightarrow\dfrac{1}{16}a+\dfrac{1}{4}b=-\dfrac{1}{8}$\\
+ $\Rightarrow$thay vào $(1): 4a \cdot \left(\dfrac{1}{2}\right)^3+2b \cdot\left(\dfrac{1}{2}\right)=0$\\
+ $\Leftrightarrow \dfrac{1}{2}a+b=0$\\
+ - Đến đây rồi ta có thể dùng phương pháp thế để tìm a, b hoặc giải hệ phương trình tìm a,b:\\
+ -Phương trình: \\
+\[
+\left\{
+\begin{aligned}
+    \dfrac{1}{16}a + \dfrac{1}{4}b &= -\dfrac{1}{8} \\
+    \dfrac{1}{2}a + b &= 0
+\end{aligned}
+\right.
+\]\\
+$\Rightarrow a = 2, b =-1;c=-2,x=1$\\
+$\Rightarrow$thay vào $(*):y=2 \cdot1^4+-1 \cdot1^2-2$\\
+$\Rightarrow y(1)=-1$\\
+\textbf{Câu 20}.$y=f(x)=\dfrac{x^2+x-2}{x+1}$\\
+$c)y=f(x)-3x$\\
+$\Rightarrow y = \dfrac{x^2+x-2}{x+1}-3x$\\
+$\Rightarrow y = -\dfrac{-2x^2-2x-2}{x+1}$\\
+$\Rightarrow y'=\dfrac{-2x^2-4x}{(x+1)^2}$\\
+$ y'=0\Leftrightarrow -2x^2-4x=0$\\
+\[
+\Leftrightarrow
+\left[
+\begin{array}{l}
+x = -2\\
+x = 0
+\end{array}
+\right.
+\]\\
+- Thay $x$ vào $y$ ta có:\\
+\[
+\Leftrightarrow
+\left[
+\begin{array}{l}
+y = 6\\
+y = -2
+\end{array}
+\right.
+\]\\
+$\Rightarrow A(-2;6);B(0;-2)$
+- Áp dụng công thức tính khoảng cách hai điểm ta có:\\
+$AB=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}=\sqrt{(2)^2+(-2-6)^2}=2\sqrt{17}$\\
+d) Mệnh đề : Hàm số $y=|f^2(x)-1|$ có 4 điểm cực trị.\\
+Lời giải:\\
+- Thay vì xét y mang dấu giá trị tuyệt đối phức tạp, ta sẽ tư duy thông minh hơn, chia để trị bằng cách xét phần lõi của trị tuyệt đối tức là xét bên trong trị tuyệt đối thay vì xét cả trị tuyệt đối.\\
+1.Phương pháp chung\\
+- Đặt $g(x)=f^2(x)-1$<Hàm này chính là lõi của hàm trị tuyệt đối>\\
+- Áp dụng công thức : số điểm cực trị $y=|g(x)|=$ số điểm cực trị của $g(x)+$Số nghiệm đơn của phương trình $g(x)=0$\\
+2.Tính số điểm cực trị của $g(x)$\\
+$\Rightarrow g'(x)=2f(x) \cdot f'(x)$\\
+$g'(x)=0$\\
+\[
+\Leftrightarrow
+\left[
+\begin{array}{l}
+f(x)=0\\
+f'(x)= 0
+\end{array}
+\right.
+\]\\
+- Với $f(x)=0 \Leftrightarrow\dfrac{x^2+x-2}{x+1}=0$\\
+$\Rightarrow x \ne -1$\\
+$\Rightarrow x^2+x-2=0$\\
+\[
+\Leftrightarrow
+\left[
+\begin{array}{l}
+x =1\\
+x=-2
+\end{array}
+\right.
+\]\\
+- Kết luận $g'(x) =0$ có hai nghiệm\\
+- Với $f'(x)=0$\\
+$\Rightarrow f'(x)=\dfrac{x^2+2x+3}{(x+1)^2}=0$\\
+- Mẫu luôn dương rồi nên ta xét tử:\\
+$x^2+2x+3=0 \Rightarrow$vô nghiệm nên không có cực trị.\\
+Kết luận hàm $g(x)$có hai điểm cực trị.\\
+3.Tìm nghiệm của $g(x) =0$ <nơi g(x) cắt đồ thị>\\
+$g(x)=f^2(x)-1$\\
+$g(x)=0$
+\[
+\Leftrightarrow
+\left[
+\begin{array}{l}
+f(x)=1\\
+f(x)=-1
+\end{array}
+\right.
+\]\\
+- Với $f(x)=1 \Leftrightarrow \dfrac{x^2+x-2}{x+1}=1 \Leftrightarrow x^2+x-2=x+1\Leftrightarrow x^2+x-2-x-1 \Leftrightarrow x^2-3=0 \Rightarrow$có 2 nghiệm\\
+- Với $f(x)=1 \Leftrightarrow \dfrac{x^2+x-2}{x+1}=-1$ Cách giải tương tự câu trên và cũng có 2 nghiệm.\\
+- Kết luận $g(x)=0$ có tổng công $2+2=4$ nghiệm đơn.\\
+4.Tổng kết\\
+- 2 nghiệm của $g'(x) + 4$ nghiệm của $g(x) = 6$ nghiệm.\\
+$\Rightarrow$ mệnh đề sai.\\
+Note: Đối với dạng trị tuyệt đối nên xét bên trong của nó để dễ dàng tính toán hơn.\\
+\textbf{Câu 21}.$y=\dfrac{x^2-4x+1}{x+1},D=\mathbb{R} \backslash\{-1\}$\\
+$y'=\dfrac{x^2+2x-5}{(x+1)^2}=0$\\
+$\Leftrightarrow x^2+2x-5=0$\\
+\[
+\Leftrightarrow
+\left[
+\begin{array}{l}
+x=-1+\sqrt{6}\\
+x=-1-\sqrt{6}
+\end{array}
+\right.
+\]\\
+- Bảng biến thiên:\\
+\begin{center}
+\begin{tikzpicture}
+    % Khởi tạo cấu trúc bảng
+    \tkzTabInit[lgt=2.5, espcl=3]
+    {$x$ /1, $f'(x)$ /1, $f(x)$ /3}
+    {$-\infty$, $-1-\sqrt{6}$, $-1$, $-1+\sqrt{6}$, $+\infty$}
+
+    % Điền dấu cho hàng f'(x)
+    \tkzTabLine{,+,0,-,d,-,0,+,}
+
+    % Điền chiều biến thiên và các giá trị cho hàng f(x)
+    \tkzTabVar{
+        $_{-\infty}$, % Bắt đầu từ -vô cực
+        $^{\text{CĐ: } -6-2\sqrt{6}}$, % Tăng (^) lên giá trị Cực đại
+        $_{-\infty}$, % Giảm (_) xuống -vô cực
+        d,           % Đường kẻ đôi
+        $_{+\infty}$, % Bắt đầu từ +vô cực
+        $_{\text{CT: } -6+2\sqrt{6}}$, % Giảm (_) xuống giá trị Cực tiểu
+        $^{+\infty}$  % Tăng (^) lên +vô cực
+    }
+\end{tikzpicture}
+\end{center}
+- Từ tính toán trên ta có thể dễ dàng nhận thấy:\\
+a)Đ\\
+b)Đ\\
+c)S\\
+d)Đ, note: với câu d này lấy 2 nghiệm cộng nhau cũng được hoặc dùng định Vi-ét -b/a = -2 cũng được\\
+\textbf{Câu 22}.$f(x)=3x+1+\dfrac{3}{x+2}, D=[-2;1]$\\
+$f'(x)=0 \Leftrightarrow3-\dfrac{3}{(x+2)^2}=0$\\
+$\Leftrightarrow \dfrac{3}{(x+2)^2}=3$\\
+- chia cả 2 vế cho 3:\\
+$\Leftrightarrow1=\dfrac{1}{(x+2)^2}$\\
+$\Leftrightarrow(x+2)^2=1 \Leftrightarrow x +2=1, x+2=-1 \Leftrightarrow x=-1, x=-3$\\
+Bảng biến thiên(xét trên D thôi vì đề bài yêu cầu):\\
+$$
+\begin{array}{c|ccccc}
+x      & -2 & & -1 & & 1 \\
+\hline
+f'(x)  & \parallel & - & 0 & + & \\
+\hline
+f(x)   & +\infty & \searrow & 1 & \nearrow & 5
+\end{array}
+$$
+c)\\
+- Xét giá trị nhỏ nhất bằng cách xét các giá trị xung quanh điểm cần xét, điểm cần xét của chúng ta là $y=1$.\\
+- Quan sát bảng biến thiên ta thấy khi x tiến tới -2 giá trị cực trị là dương vô cùng vô cùng lớn, nhưng khi đến -1 thì lại giảm xuống y = 1 sau khi đi qua x = -1, y = 1, nó tiến tới x = 1 lần này giá trị cực đại là 5 lớn hơn 1 nên => x = -1; y = 1 là nhỏ nhất trên miền D[-2;1] rồi.\\
+d) Hàm $f(x)$ dịch chuyển lên một đơn vị thành $f(x+1)$ mới có cực trị nên ban đầu hàm $f(x)$ không có cực trị $\Rightarrow f(x)$không có cực trị $\Rightarrow$ mệnh đề sai.\\
+Câu 24.\\
+a)\\
+Biết : \\
+$\Rightarrow$a( chiều rộng) cố định\\
+$\Rightarrow$ chiều dài không cố định\\
+$\Rightarrow$ chiều cao không cố định\\
+$\Rightarrow$ Gọi chiều dài, chiều cao lần lượt là $x(m), y(m)$.\\
+$\Rightarrow$ Như ta đã biết : $V=a \cdot x \cdot y$\\
+$\Rightarrow y = \dfrac{500}{3ax}$\\
+$\Rightarrow$ Vì $a, V$ là cố định nên chỉ còn $x,y$ có thể thay đổi xét $y$ ta có:\\
+$\Rightarrow$ Bậc tử là một hằng số, bậc mẫu là bậc $1 \Rightarrow$ bậc tử lớn hơn bậc mẫu $\Rightarrow$ mẫu tăng nhanh hơn, chiều dài tăng lên tức là $x \to +\infty$ thì $y \to 0$\\
+$\Rightarrow$vì $x$ càng lớn nên $y$ càng nhỏ hay có thể nói chiều dài tăng thì chiều cao giảm $\Rightarrow$ mệnh đề đúng.\\
+Câu 25\\
+b)\\
+- Biết:\\
+$\rightarrow a$(chiều rộng đơn vị là m) cố định.\\
+$\rightarrow $chiều dài không cố định.\\
+$\rightarrow $chiều cao không cố định.\\
+$\Rightarrow$ Như ta đã biết : $V=a \cdot x \cdot y$\\
+... câu này làm tương tự như ý a của câu 24 nên không chữa nữa.\\
+c)\\
+Biết:\\
+$\rightarrow$a(chiều rộng) = 1m.\\
+Hỏi:\\
+$\rightarrow S_{min}=?$\\
+gọi S Bể có nắp là : $S(x)$\\
+gọi chiều dài là $x(m)$.\\
+gọi chiều cao là $h(m)$.\\
+Lời giải:\\
+S Bể có nắp = $S(x)=S_{tp} = S_{xq}+2 \cdot S_{\text{đáy}}$\\
+$\Rightarrow S(x)=2h+2hx+2 \cdot x \cdot a$\\
+$\Leftrightarrow S(x)=2h+2hx+2x$\\
+Như ta đã biết: $V=x \cdot a \cdot h \Rightarrow h=\dfrac{3}{x}$ (Rút $x$ hay $h$ đều được nhưng vì tìm x nên ta rút h cho nó tự nhiên nó dễ tính )\\
+$\rightarrow$Thay $h$ vào $S(x)$:\\
+$\Rightarrow S(x)=\dfrac{6}{x}+2x+6$ (Đây là diện tích nên điều kiện chắc chắn là $x>0$)\\
+$S'(x)=\dfrac{-6}{x^2}+2=0 \Rightarrow x=\sqrt{3}$\\
+$\Rightarrow S_{min}=S\left(\sqrt{3}\right) \Rightarrow$ mệnh đề sai.\\
+d)\\
+\textbf{Cách 1:} làm như ở note trên ipad.  
+
+Đề bài yêu cầu tìm \textit{giá tiền nhỏ nhất}, trong đó:
+\[
+\text{Giá tiền} = (\text{số m}^2)\cdot 600000.
+\]
+Ta có thể tìm số m$^2$ bằng cách xét phương trình $S'(x)=0$ để tìm $x$, rồi thay $x$ vào $S(x)$, khi đó $S(x)$ chính là diện tích (tức số m$^2$). Nhân kết quả với $600000$ sẽ ra giá tiền nhỏ nhất.
+
+\medskip
+\textbf{Cách 2:} dùng bất đẳng thức AM–GM (Cauchy). \\ 
+- Ý tưởng hàm $S(x) = 4x^2 + \dfrac{9}{x}$ \\
+- Các bạn có thể thấy nếu thay x = 0.1 thì $\dfrac{9}{x}$ sẽ rất lớn. Ngược lại $4x^2$ lại  rất nhỏ kéo theo hàm $S(x)$ cũng sẽ rất lớn\\
+- Các bạn có thể thấy nếu thay x = 100 thì $4x^2$ sẽ rất lớn.Ngược lại $\dfrac{9}{x}$ lại  rất nhỏ kéo theo hàm $S(x)$ cũng sẽ rất lớn\\
+- Từ những điều trên ta suy ra hàm $S(x)$ chỉ nhỏ nhất khi $4x^2, \dfrac{9}{x}$ không lệch nhau quá và bất đẳng thức AM-GM sẽ là công cụ tìm điểm cân bằng đó mà điểm cần cân bằng đó khiến $S(x)$ là nhỏ nhất tức là diện tích nhỏ nhất nó giống như thay giá trị cực tiểu vào $S(x)$ để tìm $m^2$ nhỏ nhất vậy, công cụ AM-GM giúp ta tính toán ra trực tiếp $m^2$ luôn.\\
+- tóm tắt tư duy : điểm cân bằng $= S(x)$ khi nhỏ nhất = diện tích nhỏ nhất cần xây = $m^2$, từ $m^2 \cdot$ giá tiền = chi phí $\Rightarrow$ giải quyết bài toán.\\
+Điều kiện áp dụng AM–GM:
+\begin{enumerate}
+    \item Các số hạng phải dương.
+    \item Tích các số hạng phải là hằng số.
+\end{enumerate}
+
+\medskip
+\textbf{Lời giải:}  
+Giả sử sau nhiều bước biến đổi ta được(Phần này tính toán như cách 1 nên giả sử tôi có sẵn cái hàm đi $:>$ tôi lười hihi):
+\[
+S(x) = 4x^2 + \frac{9}{x}, \qquad x>0.
+\]
+
+Mục tiêu là tìm số $M$ nhỏ nhất sao cho
+\[
+S(x) \geq M \quad \forall x>0.
+\]
+Dùng AM-GM cho 3 số:\\
+$a+b+c=3\sqrt[3]{abc}$\\
+- Ta thấy nếu dùng trực tiếp $S(x)$ tích của chúng là $36x$ vẫn còn $x$ nên ta sẽ tiến hành kĩ thuật tách số hạng:\\
+$\Rightarrow$ Để khử $x^2$,ta cần có $x^2$ dưới mẫu. Hiện tại mới có x. Nên thêm 1 số hạng nữa cũng có x ở mẫu bằng cách tách:\\
+$\dfrac{9}{x}=\dfrac{9}{2x}+\dfrac{9}{2x}$\\
+- Áp dụng bất đẳng thức:\\
+$4x^2+\dfrac{9}{2x}+\dfrac{9}{2x}\ge3\sqrt[3]{(4x^2) \cdot \left(\dfrac{9}{2x}\right) \cdot \left(\dfrac{9}{2x}\right)}\ge3\sqrt[3]{81}$\\
+$\Rightarrow$Chi phí = $3\sqrt[3]{81} \cdot500000=6490123.066$ lấy phần triệu nên để là $6490123 \Rightarrow$ Mệnh đề đúng.
+\end{document}
+

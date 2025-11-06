@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="240mm"
+   height="120mm"
+   viewBox="0 0 240 120"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.2 (1.0.2+r75+1)"
+   sodipodi:docname="max-profit.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.406257"
+     inkscape:cx="434.98723"
+     inkscape:cy="181.65389"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showborder="true"
+     width="200mm"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1426"
+     inkscape:window-height="1080"
+     inkscape:window-x="245"
+     inkscape:window-y="-2"
+     inkscape:window-maximized="1"
+     inkscape:document-rotation="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid815"
+       units="mm"
+       spacingx="10"
+       spacingy="10"
+       empspacing="4"
+       dotted="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-177)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583"
+       d="M 50.887296,227.1369 190.49076,226.94778"
+       id="path8" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583"
+       d="M 51.074708,242.56511 190.67817,242.00082"
+       id="path10" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583"
+       d="m 67.065143,215.8479 0.567738,57.75965"
+       id="path12" />
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text16"
+       y="222.966"
+       x="55.327236"><tspan
+         sodipodi:role="line"
+         id="tspan14"
+         x="55.327236"
+         y="222.966"
+         style="stroke-width:0.264583" /></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text44"
+       y="222.58971"
+       x="58.149445"><tspan
+         sodipodi:role="line"
+         id="tspan42"
+         x="58.149445"
+         y="222.58971"
+         style="stroke-width:0.264583">$x$</tspan></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text58"
+       y="237.07704"
+       x="53.837296"><tspan
+         sodipodi:role="line"
+         id="tspan56"
+         x="53.837296"
+         y="237.07704"
+         style="stroke-width:0.264583">$P'(x)$</tspan></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text72"
+       y="256.07993"
+       x="52.375347"><tspan
+         sodipodi:role="line"
+         id="tspan70"
+         x="52.375347"
+         y="256.07993"
+         style="stroke-width:0.264583">$P(x)$</tspan></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text86"
+       y="221.46083"
+       x="74.14196"><tspan
+         sodipodi:role="line"
+         id="tspan84"
+         x="74.14196"
+         y="221.46083"
+         style="stroke-width:0.264583">$0$</tspan></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text100"
+       y="222.32082"
+       x="170.40211"><tspan
+         sodipodi:role="line"
+         id="tspan98"
+         x="170.40211"
+         y="222.32082"
+         style="stroke-width:0.264583">$+\infty$</tspan></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text114"
+       y="222.02527"
+       x="117.43105"><tspan
+         sodipodi:role="line"
+         id="tspan112"
+         x="117.43105"
+         y="222.02527"
+         style="stroke-width:0.264583">$21000$</tspan></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text128"
+       y="235.94817"
+       x="121.7432"><tspan
+         sodipodi:role="line"
+         id="tspan126"
+         x="121.7432"
+         y="235.94817"
+         style="stroke-width:0.264583">$0$</tspan></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text142"
+       y="236.32445"
+       x="93.33297"><tspan
+         sodipodi:role="line"
+         id="tspan140"
+         x="93.33297"
+         y="236.32445"
+         style="stroke-width:0.264583">$+$</tspan></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text156"
+       y="236.13631"
+       x="151.6586"><tspan
+         sodipodi:role="line"
+         id="tspan154"
+         x="151.6586"
+         y="236.13631"
+         style="stroke-width:0.264583">$-$</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583"
+       d="M 73.464618,269.27921 118.24444,251.59383"
+       id="path170" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583"
+       d="m 132.9175,251.97209 53.99595,16.5568"
+       id="path172" />
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text176"
+       y="251.18808"
+       x="116.49032"><tspan
+         sodipodi:role="line"
+         id="tspan174"
+         x="116.49032"
+         y="251.18808"
+         style="stroke-width:0.264583" /></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text190"
+       y="252.88141"
+       x="118.99307"><tspan
+         sodipodi:role="line"
+         id="tspan188"
+         x="118.99307"
+         y="252.88141"
+         style="stroke-width:0.264583">43100$$</tspan></text>
+  </g>
+</svg>

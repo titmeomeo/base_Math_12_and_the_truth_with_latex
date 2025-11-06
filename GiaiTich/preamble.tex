@@ -1,0 +1,35 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc} % Hỗ trợ tiếng Việt
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[a4paper, margin=1in]{geometry}
+
+% --- CÁC GÓI BẮT BUỘC CHO VIỆC CHÈN HÌNH (PHẦN BỊ THIẾU) ---
+\usepackage{graphicx}      % Gói này anh đã có
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+% --- ĐỊNH NGHĨA LỆNH \incfig (PHẦN BỊ THIẾU) ---
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+% --- ĐỊNH NGHĨA LỆNH \lecture (Phần này của anh đã đúng) ---
+\usepackage{xifthen}
+
+\makeatletter
+\def\@lecture{}%
+\newcommand{\lecture}[3]{
+    \ifthenelse{\isempty{#3}}{%
+        \def\@lecture{Lecture #1}%
+    }{%
+        \def\@lecture{Lecture #1: #3}%
+    }%
+    \subsection*{\@lecture}
+    \marginpar{\small\textsf{\mbox{#2}}}
+}
+\makeatother
+% --- KẾT THÚC ĐỊNH NGHĨA LỆNH \lecture ---
+

@@ -1,0 +1,504 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\newcommand{\R}{\mathbb{R}}
+\input{preamble.tex}
+\providecommand{\lecture}[6]{%
+  \section*{Lecture #1: #3 (#2)}
+}
+\begin{document}
+\lecture{7}{Thu 03 Oct 2025 9:50}{Lecture 7}
+\section*{Max-Min (part 3)}
+\textbf{I. The problem has a model} \par
+\textbf{Example 1:} \par
+\textbf{Solve:} \par
+Consider the $V(r) = k(R-r)r^2 \implies V(r) = kRr^2-kr^3$ \par
+$V'(r) = 2kRr - 3kr^2 = kr(2R-3r)$ \par
+$V'(r) = 0 \iff$
+\begin{math}
+	\left[ \begin{array}{l}
+	    r = 0\\
+	    r = \frac{2R}{3}
+	\end{array} \right. 
+\end{math} \par
+Variation table: \par
+\begin{figure}[H]
+    \centering
+    \incfig{variation-table-r}
+    \caption{Variation table R}
+    \label{fig:variation-table-r}
+\end{figure}
+$\implies \max\limits_{[0;R)}V(r) = k\frac{4R^3}{27}$ at $r = \frac{2R}{3}$ \par
+\textbf{Example 2:} \par
+\textbf{Solve:} \par
+Consider the $f(v)$ on the domain  $(0;+\infty)$ \par
+$f(v) = \frac{209,4v}{0,36v^2 + 13,2v + 264}$ \par
+$f'(v) = -\frac{-75,384v^2 + 55281,6}{(0,36v^2+13,2v+264)^2}$ \par
+$f'(v) = 0 \iff v = \frac{10 \sqrt{66} }{3}$ ( beacause $v>0$) \par
+Variation table: \par
+\begin{figure}[H]
+    \centering
+    \incfig{example-2-xeco}
+    \caption{example 2 xeco}
+    \label{fig:example-2-xeco}
+\end{figure}
+$\implies \max\limits_{(0;+\infty)} f(v) \approx 6,4041$ at  $v \approx 27,09 (km)$ \par
+\textbf{Example 3: Be careful with the convertion units} \par
+\textbf{Summary:} \par
+Sell : 60.000/item  $\implies x $ item $= 60000 \cdot x$\par
+Publitaion cost : $C(x) = 0,0001x^2 - 0,2x + 10000$ (ten thousand dong) \par
+Release cost: 20000/item  $\implies x$ item $=20000x$ \par
+Earn 90 million dong from ads \par
+$T(x)$ as total cost = publication cost + release cost \par
+\textbf{Solve:} \par
+a)True : \par
+convert dong to ten thousand dong : $\frac{20000x}{10} = 2x$ \par
+ $T(x) = 0,0001x^2 - 0,2x + 10000 +2x = 0,0001x^2 + 1,8x + 10000 $ \par
+ b) True\par
+ Convert dong to ten thousand dong : $\frac{60000x}{10000} = 6x$ \par
+ Revenue x books = sell (ten thousand dong) + Earn from ads $= 6x + 9000$ \par
+ Profit = Revenue - cost \par
+ Let $P(x)$ be profit function \par
+  $\implies P(x) = 6x + 9000 -  (0,0001x^2 + 1,8x + 10000)$ \par
+  $= -0,0001x^2 - 4,2x - 1000$ \par
+  $P(1000) = 3100$ ( ten thousand dong ) \par
+  $\implies 3100 \cdot 10000 = 31000000$ (thousand dong) \par
+  c) True \par
+  $T(x) = 0,0001x^2 + 1,8x + 10000$ \par 
+  $\implies M(x) = \frac{T(x)}{x} = 0,0001x + 1,8 + \frac{1000}{x}$ \par
+$M'(x) = 0,0001 - \frac{1000}{x^2}$ \par
+$M'(x) = 0 \iff x = 10000 ( x > 0)$ \par
+Variation table : \par
+\begin{figure}[H]
+    \centering
+    \incfig{vnd}
+    \caption{VND}
+    \label{fig:vnd}
+\end{figure}
+$\implies M(10000) = 3,8$ (ten thousand dong) \par
+$\implies 3,8 \cdot  10000 = 38000$ ( thousand dong ) \par
+d)True \par
+$P(x) = -0,0001x^2 - 4,2x - 1000$ \par
+$P'(x) = -0,0002x - 4,2$ \par 
+$P'(x) = 0 \iff x = 21000$ \par
+\begin{figure}[H]
+    \centering
+    \incfig{max-profit}
+    \caption{Max Profit}
+    \label{fig:max-profit}
+\end{figure}
+$\implies 43100 \cdot 10000 = 431000000$ (million dong) \par
+\textbf{II.The problem needs to build a model}\par
+\textbf{Example 4:} \par
+\textbf{Solve:} \par
+A square aluminum sheet $\implies$ All four sides are equal: \par
+\begin{math}
+	h = x \\
+	l = 100-2x\\
+	w = 100-2x\\
+	100 - 2x > 0 \implies 0 < x < 50 \implies (0;50) \\
+	\implies V = l \cdot w \cdot h \\
+	= (100-2x)^2 \cdot x\\
+	= 4x^3 - 400x^2 + 10000x
+\end{math} \par
+Consider $V(x)$ on the domain  $(0;50)$ \par
+ $V'(x) = 12x^2 - 800x + 10000$ \par
+  $V'(x) = 0 \iff $ 
+  \begin{math}
+	  \left[ \begin{array}{l}
+	      x = 50 \\
+	      x = \frac{50}{3}
+	  \end{array} \right. 
+  \end{math} \par
+ Variation table: \par
+\begin{figure}[H]
+    \centering
+    \incfig{tam-nhom-cua-bac-5}
+    \caption{tam nhom cua bac 5}
+    \label{fig:tam-nhom-cua-bac-5}
+\end{figure}
+$\implies \max\limits_{(0;50)}V(x) = 74074,074$ at $x = \frac{50}{3}$ \par
+\textbf{Example 5:}\par
+Idea: $\hat{BEC} = \hat{CEH} -  \hat{BEH}$ \par
+\textbf{Solve:} \par
+Draw $AB \perp CD(H \in AB) \implies HA = 1,6, HB = 6,4$ \par
+We have: \par
+in $\triangle BHE:tan \hat{BEH} = \frac{6,4}{x}$ \textbf{Note:} $tan = \frac{opposite}{adjacent}$ \par 
+in $\triangle CHE:tan \hat{CEH} = \frac{8,1}{x}$ \par
+$\implies tan \hat{BEC} = tan(\hat{CEH) - \hat{BEH}} = \frac{tan \hat{CEH} - tan \hat{BEH}}{1 + tan \hat{CEH} \cdot tan \hat{BEH}} = \frac{1,7x}{x^2 + 51,84}$ \textbf{Note:} $\frac{tan \alpha - tan \beta}{1 + tan \alpha \cdot tan \beta}$ \par
+Consider $f(x) = \frac{1,7x}{x^2+51,84} (0;+\infty)$ \par
+$f'(x) = \frac{-1,7x^2 + 88,128}{(x^2 + 51,84)^2}$ \par
+$f'(x) = 0 \iff x = \frac{36}{5} (x > 0)$ \par
+\textbf{Variation table:} \par
+\begin{figure}[H]
+    \centering
+    \incfig{find-bec}
+    \caption{Find BEC}
+    \label{fig:find-bec}
+\end{figure}
+$\implies \max\limits_{(0;+\infty)}f(x) = \frac{17}{144}$ at $x = \frac{36}{5}$\par
+\textbf{III.HomeWork} \par
+\textbf{Sentence 1: Be careful Procducts sold} \par
+\textbf{Idea:} \par
+
+Products sold $=x$ \par
+Price  $=P$\par
+Total cost  $=Q$ \par
+Sales = price  $\cdot$ Products sold $= P \cdot x = (600-2x) \cdot x = -2x^2+600x $ \par
+Profit = Sales - Total cost = $-2x^2+600x-0,2x^2-28x-200 = -2,2x^2+572x-200$ \par
+Consider  $f(x) = -2,2x^2+572x-200 (0; +\infty)$ \par
+ $f'(x) = -4,4x + 572$ \par
+ $f'(x) = 0 \iff x = 130$ \par
+\textbf{Variation table:} \par
+\begin{figure}[H]
+    \centering
+    \incfig{be-careful-with-products-sold}
+    \caption{Be careful with Products sold}
+    \label{fig:be-careful-with-products-sold}
+\end{figure} 
+$\implies \max\limits_{(0;+\infty)}f(x) = 36980$ at $x=130$ \par
+\textbf{Sentence 2:} \par
+\textbf{Skill:} main skill “Unfold( trải phẳng)” \par
+\textbf{Calculator tool : } \par
+- Similar triangles/Thales' + Unfold theorem  or deratives + pytago theorem\par
+\textbf{Solve:} \par
+Before: \par
+\begin{figure}[H]
+    \centering
+    \incfig{bridge-donganh}
+    \caption{Bridge-DongAnh}
+    \label{fig:bridge-donganh}
+\end{figure}
+\textbf{Medthod 1:Using deratives + pytago} \par
+We can see : AB = AP + P + Q + QB \par
++) PQ = width of river $\implies$ PQ is constant = 0,8 $\implies $  should we need to find  only min of sum AP + QB \par
+Let side $AP = x \implies QB = 2 - x$ \par 
+\textbf{Apply theoreo pytago we have :} \par
+$AP = \sqrt{3^2 + x^2} = \sqrt{9 + x^2}  $ \par
+$QB = \sqrt{25 + (2 - x)^2} $ \par
+Consider $f(x) = \sqrt{9+x^2} + \sqrt{25 + (2-x)^2}$ \par
+$f'(x) = \frac{x}{\sqrt{9+x^2} } + \frac{2-x}{\sqrt{25 + (2-x)^2}}$ \par
+$f'(x) = 0 \iff \frac{x}{\sqrt{9 + x^2} } = \frac{x-2}{\sqrt{25+(2-x)^2} }$ \par
+$\iff x \cdot \sqrt{25+(2-x)^2}=(x-2)\cdot \sqrt{9+x^2}  $ \par
+Squaring both sides, we get: \par
+$ \iff x^2 \cdot  [25 + (2-x)^2] = (x-2)^2 \cdot (9 + x^2)$ \par
+$\iff (x^2 \cdot 25) + x^2\cdot (2-x)^2 = ((x-2)^2 \cdot 9) + (x-2)^2\cdot x^2$ \par
+$\iff 25x^2 + x^2(2-x)^2 - 9(x-2)^2 -x^2(x-2)^2 = 0$ \par
+Because $x^2(x-2)^2$ and  $x^2(2-x)^2$ cancel each other out should we have : \par
+$\iff 25x^2 - 9(x-2)^2 =0$\par 
+Apply the identity $(A-B)^2 = 2AB + B^2$ with  $(x-2)^2$ we have : \par
+$\iff 25x^2 - 9(4-4x + x^2)$ \par
+$\iff 25x^2 - 36 + 36x - 9x^2 = 0$ \par
+$\iff 16x^2 + 36x - 36 = 0 \iff x = \frac{3}{4} ( 0 < x < 2)$ \par 
+\textbf{Variation table:} \par
+\begin{figure}[H]
+    \centering
+    \incfig{min-do-lech}
+    \caption{min do lech}
+    \label{fig:min-do-lech}
+\end{figure} 
+$x = d_1 = \frac{3}{4} = 0,75 \implies $ answer A \par
+\textbf{Method 2: Using Similar triatangles/Thales' + Unfold theorem} \par 
+\textbf{Apply technique Unfold(trai hinh) we have :} \par
+After using technique Unfold remove Riverbank(2) we have figure : \par
+\begin{figure}[H]
+    \centering
+    \incfig{remove-riverbank(2)}
+    \caption{Remove riverbank(2)}
+    \label{fig:remove-riverbank(2)}
+\end{figure} 
+\textbf{Solve:} \par
+1.Suppose : \par
++) Riverbank(1) is $y=0 \implies $ Riverbank(2) is $y = 0,8$ \par
++)  $d_1$ through  $A = x = 0, d_2$ through  $B = x = 2$ (you can assign coodrinates freely, as long as the distance between  $d_1$ and $d_2$ is $2km$ \par
+Based on the above, we have : \par
++)Point A is $3km$ from Riverbank(1)  $\to  y = 0 + - 3 \implies A(0,-3)$ \par
++)Point B is $5km$ from Riverbank(1)  $\to  y = 0,8 + 5 \implies B(2;5,8)$ \par
+2.Unfold \par
+Remove Riverbank(2) by translate point B forward by a distance equal to the rive's width(0,8km) introduce an auxiliary point  $B'$ \par
+$\implies B(2;5,8) \to B'(2;5,8-0,8) = (2;5)$ \par
+3.Now problem become: \par
+- find shortest path $A(0;-3) \to B'(2;5)$ and cut Reverbank(1) at 1 point is C(x,0) \par
+- We know shortest path both two point is a line \par
++) The location : \par
+- before draw a line  $A \to B'$ we can see line $AB'$ cut Riverbank(1) at  $C(x,0)$ we need to find  $x$ \par
+- before draw a line  $A\to B'$ we get 2 right triangle that is $\triangle AHC $ and $\triangle B'KC$ \par
++) $A,C,B'$ collinear create to 2 vertical angles  $A \hat{C} H$ and $B' \hat{C} H$(Verical angles are equal) \par
+We have : \par
+$\hat{H} = \hat{K} = 90^{\circ}$ \par
+$A \hat{C} H = B' \hat{C} H$ (Vertical angles) \par
+$\implies \triangle AHC \sim \triangle B'KC(g.g)$ \par
+$\implies$ ratio : $\frac{AH}{B'K} = \frac{HC}{KC}$ \par
+$\iff \frac{3}{5} = \frac{x}{2-x}$ \par
+$\iff x = 0,75$ \par
+\textbf{Sentence 3:} \par
+\textbf{Key idea:} Time = workload / productivity \par
+\textbf{Summarize:} \par
+15 machine $\implies 1 \le x \le 15$ \par
+C = productivity : 30(products)/h $\implies 30\cdot x_{machine}$<productivity> \par
+A = Maintenance: 48000/machine $\implies 48000\cdot x_{machine}$ <cost> \par
+B = Monitoring: 24000/h $\implies 24000\cdot x_{h}$ <cost> \par
+Time = $x_{h} = \frac{workload}{productivity} = \frac{6000}{30x} = \frac{200}{x}$ \par 
+Total cost =  A + B \par
+Consider $C(x) = 48000x + \frac{4800000}{x}$ \par
+$C'(x) = 48000 - \frac{4800000}{x^2}$ \par
+$C'(x) = 0 \iff x = 10 (1 \le x \le 15)$ \par
+\textbf{Variation table} \par 
+\begin{figure}[H]
+    \centering
+    \incfig{be-careful-x-hour}
+    \caption{Be careful x hour}
+    \label{fig:be-careful-x-hour}
+\end{figure} 
+$\implies \min\limits_{[1;15]}C(x) = 960000$ at $x = 10$ \par
+\textbf{Sentence 4:}\par
+\begin{figure}[H]
+    \centering
+    \incfig{nhin-hinh-la-ra}
+    \caption{nhin hinh la ra}
+    \label{fig:nhin-hinh-la-ra}
+\end{figure}
+a) $S_{rectangle} = a\cdot b \implies$ proposition true. \par
+b) $l = a + 3 + 3 = a +6$ \par
+ $w = b +2+2=b+4$ \par
+ $\implies$ proposition false.
+ c)\par
+we know : $ab = 384$ \par
+ $\implies b = \frac{384}{a}$ (Factor out "a" to make "a" the common variable) \par
+ $\implies S_{magazine} = (a+6)(b+4)$ \par
+ $= (a+6)(\frac{384}{a} + 4)$ \par
+$=384+4a+\frac{2304}{a}+24$ \par
+$=4a+\frac{2304}{a} + 408$ \par
+Using AM-GM we have : \par
+$4a+\frac{2304}{a} \ge 2\cdot \sqrt{4a\cdot \frac{2304}{a}} + 408 = 600 \implies $ proposition true.\par
+The "=" occur when $4a=\frac{2304}{a} \implies a = 24 \implies b = 16$ \par
+d) $P=2*(a+6+b+4) = 100 \implies$ proposition false. \par
+\textbf{Sentence 5} \par
+a) false \par
+$S_{base} = \pi \cdot r^2$ \par
+$V = S_{base} \cdot h = \pi \cdot r^2 \cdot h$ \par
+$\implies V = \pi \cdot R^2 \cdot h$ \par
+b) true \par
+$S_{total} = 2\pi R(R + h) = 10,08\pi$ \par 
+C) false \par
+if $V = 1dm^3 \implies$
+ $V =  \pi r^2 h \implies h = \frac{V}{\pi r^2}  \implies h = \frac{1}{\pi r^2}$ \par
+ $\implies S_{total} = 2\pi R^2 + \frac{2}{R}$ \par
+ d) \par
+ \textbf{Method 1: Using the deratives} \par
+ Consider$S(v) = 2\pi R^2 + \frac{2}{R}(0;+\infty)$ \par
+ $S'(v) = 4\pi R - \frac{2}{R^2}$ \par
+ $S'(v) = 0 \iff R = \frac{1}{\sqrt[3]{2\pi}}$ \par
+ \textbf{Variation table:} \par
+\begin{figure}[H]
+    \centering
+    \incfig{happy}
+    \caption{happy}
+    \label{fig:happy}
+\end{figure} 
+\textbf{Method 2: Using the AM-GM inequality} \par
+We have : $2\pi R^2 + \frac{2}{R} = 2\pi R^2 + \frac{1}{R} + \frac{1}{R} \ge 3\cdot \sqrt[3]{2\pi R^2 \cdot \frac{1}{R} \cdot \frac{1}{R}}= 3\cdot \sqrt[3]{2\pi}  $ \par
+The "=" sign in used when $2\pi R^2 = \frac{1}{R} \implies R = \frac{1}{\sqrt[3]{\frac{1}{2\pi}}}$
+\textbf{Note:} $\sqrt[n]{\frac{a}{b}}} = \frac{\sqrt[n]{a} }{\sqrt[n]{b} }(a,b >0) $ \par
+\textbf{Sentence 6:} \par
+\begin{figure}[H]
+    \centering
+    \incfig{rectangle}
+    \caption{rectangle}
+    \label{fig:rectangle}
+\end{figure}
+a) $V = l\cdot w \cdot h$ \par
+$= a \cdot b \cdot c = 1,296$ \par
+$\implies$ proposition true. \par
+b) $S_{base} = l \cdot w$ \par
+$= a \cdot  b $ \par
+$\implies$ proposition true. \par
+c) See Figure 13 \par
+$\implies$ proposition true. \par
+d) We know $V = abc = 1,296$ (product) \par
+$S_{rectangularPrism} = ab + 2ac+3bc$ (sum) \par 
+$\implies$ Find $S_{min}$ with condition  $V = abc = 1,296$ \par
+$\implies$ Using AM-GM inequality \par
+Simplify the expresstion : $\frac{S}{V} = \frac{ab+2ac+3bc}{abc} = \frac{1}{c} + \frac{2}{b} + \frac{3}{a}$ \par
+Using AM-GM we have: \par
+$\frac{1}{c}+\frac{2}{b}+\frac{3}{a} \ge 3\sqrt[3]{\frac{1}{c}\cdot \frac{2}{b}\cdot \frac{3}{a}}= 3\sqrt[3]{\frac{6}{1,296} }=5  $ \par
+The "=" occur when $\frac{1}{c} = \frac{2}{b} = \frac{3}{a}$,we know $abc =1,296$ \par
+$b = 2c$ \par
+ $a = 3c$ \par
+  $\implies abc = 2c\cdot 3c\cdot c = 1,296$\par
+  $6c^3 = 1,296$ \par
+   $\implies c = 0,6$ \par
+   $\implies b = 1,2; a = 1,8 $\par
+$\implies$ proposition true. \par
+
+\textbf{Sentence 7:} \par
+Summarize: \par
+Basis price : 30000/kg \par
+Selling price : 50000/kg \par
+$\implies$ sold : 25kg \par
+Expected price decrease : 4000/kg $\implies$ sales up : 50kg \par
+\textbf{Solve:} \par
+a) sale 4000/kg $=$ sales up 50kg  $\implies$ Not sure extra sales from discount \par
+$\implies$ Price dropped is : Basic price - Price dropped $\implies 50000-x$ $\implies$ proposition a true. \par
+b) decrease 4000 $\implies$ increase 50kg \par
+$\frac{50}{4000} \implies$ ratio (Selling price : 50000) \par
+sold / increase price = ratio $\implies$ sold = increase price $\cdot $ ratio $= (50000-x) \cdot  0,0125 = 625-0,0125x$ \par
+$\implies$ proposition  b true. \par
+d) \par
+Profit = sales  - cost \par
+sales = selling price * sold \par
+cost = Basic price * sold \par
+Let profit function = $P(x)$ \par
+Consider  $P(x) = [(650x-0,0125x^2)] - (19500000-375x)$ on the interval $(0;+\infty) $ \par
+
+$\iff P(x) = -0,0125x^2 + 1025x - 19500000$ \par
+$P'(x) = -0,025x+1025$ \par
+$\iff P'(x) = 0 \iff x = 41000$ \par
+\textbf{Variation table:} \par
+\begin{figure}[H]
+    \centering
+    \incfig{sentence-b-so-hard}
+    \caption{sentence b so hard}
+    \label{fig:sentence-b-so-hard}
+\end{figure}
+\textbf{Sentence 8:} \par
+a)true \par
+$B = A_{base} = l \cdot  w$ \par
+$\implies V = B \cdot h $ \par
+b)false \par
+$w = \frac{3}{2}$ \par
+$V = 18$ \par
+ $l = w \cdot 3 = \frac{3}{2} \cdot 3 = \frac{9}{2}$ \par
+ $V = l \cdot w \cdot h$ \par
+ $\implies h = \frac{V}{l\cdot w}$ \par
+ $\implies h = \frac{18}{\frac{9}{2} \cdot \frac{3}{2}} = \frac{8}{3}$ \par
+ c) true \par
+ $V = 18$ \par
+ $w = x$ \par
+  $l = 3x$ \par
+  $h = \frac{V}{l \cdot w} = \frac{18}{3x\cdot x} = 6x^2$ \par 
+  Surface area ( without lid ) : \par
+$S_{open} = S_{lateral}  + S_{base}$ \par
+$= 2\cdot \frac{6}{x^2}(3x+x) + 3x\cdot x$ \par
+$= 3x^2 + \frac{48}{x}$ \par
+d) true  \par
+\textbf{Method 1 : using AM-GM} \par
+Let$w = x$ \par
+ $h = \frac{V}{l \cdot w} \implies h = \frac{18}{3x^2}$ \par
+ $S_{openMin} = 3x^2 + \frac{48}{x} = 3x^2 + \frac{48}{2x} + \frac{48}{2x} = 3x^2 + \frac{24}{x} + \frac{24}{x} \ge 3\cdot \sqrt[3]{3x^2 \cdot \frac{24}{x} \cdot \frac{24}{x}} = 3\cdot \sqrt[3]{1778} = 36$ (Minium)\par
+ The "=" occurs when $3x^2 = \frac{24}{x} \iff x = 2$ \par
+ $h(2) = \frac{3}{2}$ \par
+ \textbf{Method 2: using deratives} \par
+$f(x) = 3x^2 + \frac{48}{x}$ \par
+$f'(x) = -48x^2 + 6x$ \par
+ $f'(x) = 0 \iff x = 2$ \par 
+ Substituting 1 billion into $f(x)$, we find that  $f(x) > 0$. Therefore, the right side of the number line starts with a "+" sign. \par
+ Variation consider sign : \par
+\begin{figure}[H]
+    \centering
+    \incfig{consider-sign}
+    \caption{consider sign}
+    \label{fig:consider-sign}
+\end{figure}
+$\implies h = \frac{3}{2}$ \par 
+\textbf{Sentence 9:} \par
+a) Sales = price * sold
+= 10 * 60 = 600
+$\implies$ proposition true \par 
+b) decrease 1000 $\implies$ sold +30 \par
+decrease 2000 $\implies 60$ \par
+$\implies$ Sales $= 8 \cdot (60+60)$ \par
+$= 960$ \par
+ $\implies$ proposition false \par
+ c) Sales = unit price * sum sold \par
+ unit price = $x$ \par
+ sum sold $=$ (initial sales quantity + the quantity sold has dereased) \par
+ initial quantity sold  $= 60$ \par
+ Original price : 10 \par
+  new price : $x$ \par 
+  $\implies$ discount amount : $10-x$ \par
+Sales volume has decreased $=$  $30(10-x)=300-30x$ \par
+Sum sold  $= 60 + 300 -30x$ \par
+ $=360-30x$ \par
+Sales $=x(360-30x)$ \par
+ $=-30x^2+360x$ \par
+  $\implies$ proposition false \par
+d) Profit = sales - cost \par
+sales = price a product * sum product sold \par
+sum product sold = 360 - 30x \par
+price a product unknow $\impliedby$ Let  $= x$ \par
+Cost = original price a product  * sum sold 
+original price = 6 , sum sold = 360 - 30x \par
+Consider  $P(x) = x(360-30x) - 6(360-30x)$ on the interval $(0;+\infty)$ \par
+$= -30x^2 + 360x + 180x - 2160$ \par
+ $P'(x) = -60x + 360 + 180$ \par
+  $P'(x) = 0 \iff x = 9 $ \par
+  \textbf{Variation table:} 
+\begin{figure}[H]
+    \centering
+    \incfig{see-tit}
+    \caption{see tit}
+    \label{fig:see-tit}
+\end{figure} 
+$\implies$ Amount to be reduced $10-9=1 \implies$ proposition true. \par
+\textbf{Setence 10:} \par
+\begin{figure}[H]
+    \centering
+    \incfig{situation}
+    \caption{situation}
+    \label{fig:situation}
+\end{figure}
+
+a) true \par
+$40 \cdot 30 = 1200(cm^2)$ \par 
+b) false \par
+look at  Figure 15: situation \par
+c) true \par
+$V = (30-2\cdot 5) \cdot (20-5)\cdot 5 = 1500$ \par
+d)
+\begin{figure}[H]
+    \centering
+    \incfig{let-see-pic}
+    \caption{Let see pic}
+    \label{fig:let-see-pic}
+\end{figure}
+Consider $V(x) = (30-2x)(20-x)\cdot x$ on the interval $[0;15]$ because  $x\ge 0, 30-2x \ge \iff x \le 15,20-x \ge 0 \iff x \le 20 \implies and , x < 15 \implies x = 15  \implies 0 \le x <= 15$ \par  
+$= 600x-70x^2+2x^3$ \par
+ $V'(x) = 6x^2-140x+600$ \par
+ $V'(x) = 0 \iff x = \frac{35-5\sqrt{13} }{3} ( x \in [0;15])$ \par
+ \textbf{Variation table:} \par
+\begin{figure}[H]
+    \centering
+    \incfig{table}
+    \caption{table}
+    \label{fig:table}
+\end{figure}
+\textbf{Sentence 11:} \par
+a) $50000\cdot 25 = 1250000 \implies$ proposition true \par
+b) $1250000 - (30000\cdot 25) = 500000\implies$ proposition true \par
+c)Original ratio : $\frac{50}{4000} = \frac{1}{80} = 0,0125$ \par
+Price decrease : $50000-x$ \par
+Increase in quantity sold :  $(50000-x)\cdot 0,0125$ \par
+$=625-0,0125x$ \par
+Total "vải" sold  $=25+625-0,0125x$ \par
+ $= 650-0,0125x \implies$ proposition false \par
+ d) Profit = sales - cost  \par
+ $\implies P(x) = x \cdot (650-0,0125x) - 30000(650-0,0125x)$ \par
+ $= -0,0125x^2 + 1025x - 1950000$ \par
+  $P'(x) = -0,025x+1025$ \par
+   $P'(x) = 0 \iff x = 41000$ \par
+ \textbf{Variation table:}\par
+\begin{figure}[H]
+    \centering
+    \incfig{figxxx}
+    \caption{figxxx}
+    \label{fig:figxxx}
+\end{figure} 
+
+
+
+
+
+\end{document}

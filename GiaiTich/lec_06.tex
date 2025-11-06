@@ -1,0 +1,598 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\newcommand{\R}{\mathbb{R}}
+\input{preamble.tex}
+\providecommand{\lecture}[6]{%
+  \section*{Lecture #1: #3 (#2)}
+}
+
+\begin{document}
+
+\lecture{6}{Mon 22 Sep 2025 20:00}{Lecture 6}
+\textbf{Lecture 6 : the maximum and minium values of a function (part 2)}\\
+\textbf{I.Theory}\\
+\textbf{1. Find max, min of function on segment}\\
+Suppose the funtion $f(x)$ is continuous on the interval  $[a, b]$ and differentiable on the open interval  $(a, b)$. Then, the rule for finding the maximum and minium values of $f(x)$ on $[a;b]$ is as follows:\\
+\textbf{Step 1:} Find the  points $x_1, x_2, x_n$ in the interval $(a, b)$ where the derivaive of the function is zero or does not exist (in simple terms, solve the equation $f'(x) = 0$ ).\\
+\textbf{Step 2:} Calculate $f(x_1), f(x_2),\ldots,f(x_n), f(a), f(b)$ (here $f(a)$ and $f(b)$ are values at the endpoints of the interval).\\
+\textbf{Step 3:} Compare all the values obtained in the step 2.\\
+The largest of these values is maximum value of $f(x)$ on  $[a,b]$ and the smallest is the minimum value of  $f(x)$ on  $[a,b]$\\
+\textbf{Example 1.}\\
+a)\\
+$f(x)$ continuos on interval  $[-2;2]$\\
+$f'(x) = 3x^2 - 6x +9x+10$\\
+ $f'(x) = 0 \iff 3x^2 - 6x + 9x + 10 = 0 \iff$
+\begin{math}
+	\left[ \begin{array}{l}
+			x = 3 \neq [-2;2] \implies (not-pick)\\
+			x = -1 \in [-2;2] \implies (pick) 
+	\end{array} \right. 
+\end{math}\\v
+$f(-1) = 15 \implies \max$\\
+$f(-2) = 8$\\
+$f(2) = -12 \implies \min$\\
+$ \implies$ $\max\limits_{[-2;2]} = 15$ at  $x = 1$\\
+$\implies \min\limits_{[-2;2]} = -12$ at $x = 2$\\
+b)\\
+$f(x)$ continuos on interval  $[1;e^2]$\\
+$f'(x) = \frac{(\ln x)' \cdot x - x'\cdot \ln x }{x^2} = \frac{1-\ln x}{x^2}$ \\
+$f'(x)=0 \implies 1-\ln x = 0 \iff 1=\ln x \iff x = e \in  [1;e^2]$\\
+$f(1)=0$ at  $x=1$\\
+$f(e) = \frac{\ln(e)}{e}=\frac{1}{e}$\\
+$f(e^2)=\frac{2}{e^2}$ \\
+$\min\limits_{[1;e^2]}f(x) = 0$ at $x = 1$\\ 
+$\max\limits_{[1;e^2]}f(x) = \frac{1}{e}$ at $x=e$\\
+Note:\\
+ $(\ln(x))' = \frac{1}{x}$ \\
+ $\ln(e)=1$
+ $\ln(x) = y \iff e^y = x$\\
+ $\ln(x)=1 \iff e^1 = x \iff x = e$\\
+c)\\
+$f(x)$ continuos on interval  $[0;\ln 2]$\\
+$f'(x)=e^x+xe^x \iff e^x(x+1)$\\
+$f'(x)=0 \iff e^x(x+1) = 0 \iff 1+x=0 \iff x = -1 \not\in [0;\ln 2]$\\
+$f(0) = 0$\\
+$f(\ln 2) = \ln 2 \cdot e^\ln(2)$ $=2 \cdot \ln 2$\\
+$\implies \min\limits_{[0;\ln 2]}f(x)=0$ at $x=0$\\
+$\implies \max\limits_{[0;\ln 2]}f(x)$ at $x=\ln 2$\\
+\textbf{Note: $e^\ln 2$ $=2$}\\
+\textbf{II.Apply}\\
+\textbf{Example 2.}\\
+\textbf{Note 1: Find $\max v(t), t \in [0;6]$\\
+  Note 2: $v(t) = s'(t)$
+} \\
+According to the physical meaning of the derivative, we have the instantaneous velocity of a particle:\\
+$v(t) = s'(t) = -3t^2 + 8t^2 + 2t + 2$\\
+Consider  $v(t)$ on  $[0;6]$; we get  $v(t)$ continuous on the interval  $[0;6]$\\
+ $v'(t) = -6t+16$\\
+ $v'(t) = 0 \iff t = \frac{8}{3} \in [0;6]$\\
+ $v(0) = 2;v(6) = -10, v(\frac{8}{3}) = \frac{70}{3}$ \\
+ $\implies \max\limits_{[0;6]}v(t) = \frac{70}{3}$ (m/s) at $t = \frac{8}{3}$ (s)\\
+ \textbf{Example 3.}\\
+ \textbf{Note:} find $\max\limits_{[0;30]} F(x)$\\
+ \textbf{Note:} find x \\
+ $F'(x) = 0,05x(30-x)-\frac{1}{40}x^2$ \\
+$=\frac{3}{2}x-0,05x^2 - \frac{1}{40}x^2$\\
+$= \frac{3}{2}x - \frac{3}{40}x^2$ \\
+$F'(x)=0 \iff $
+ \begin{math}
+ 	\left[ \begin{array}{l}
+			x=20 \in [0;30]\\
+			x=0 \in [0;30]
+ 	\end{array} \right. 
+ \end{math}\\
+$F(0) = 0$ at $x=0$\\
+$F(30)=0$ at  $x=30$\\
+$F(20)=100$ at  $x=20$\\
+$\implies \max\limits_{[0;30]}F(x) = 100$ at $x=20$(miligam)\\
+\textbf{Example 4.}\\
+\textbf{Sumarize :}\\
+- if 35 - 1 = 34 $\implies$ then increase by 50 motorbike\\
+- if 35 + 1 = 36 $\implies$ decrease by 50 motorbike\\
+- know cost price = 30 million / one\\
+- bonus distcount  8\% in cost price\\
+\textbf{Solve}\\
++) Profit = (revenue - cost)\\
++) revenue = price * quantity sold |Note: if + 1 $\implies -50 \implies +x\implies-50x$\\
++) price = $(35+x) \implies$ $x<0$ price increase,  $x>0$ price decrease\\
++) Quantity sold =  $(1000-50x)$\\
++) profit of one motorbike:  $(35+x)-30+30 \cdot 8\% = 7,4 + x$\\
++) Let sum profit is $P(x) \implies P(x) = (7,4 + x)\cdot(1000-50x)$ \textbf{Note:This is sum profit = profit * quantity sold}\\
+$=7400-370x+1000x-50x^2$\\
+ $=-50x^2+630x-7400$\\
+  $P'(x)=-1000x+630$\\
+  $\implies P(x)=0 \iff x=6,3 \implies x > 0 \implies$ \textbf{price decrease}\\
+variation table:\\
+
+\begin{figure}[H]
+    \centering
+    \incfig{figure-4-of-example-4}
+    \caption{figure 4 of example 4}
+    \label{fig:figure-4-of-example-4}
+\end{figure}
+$\implies$ Price $=35+6,3=41,3$ million  $\implies D$ \\
+\textbf{Example 5.}\\
+\textbf{Note: s = v * t(general formula), t = s / v, find x -> find equation timer}\\
+\textbf{Sumarize:}\\
++) AB = 4 km\\
++) AM = v = 6km/h(1)\\
++) v of MC = 10km/h(2)\\
++) (1) and (2) is v\\
+\textbf{Solve:}\\
+$AC = AM + MC \to ( 0 \le x \le 7$ beacause: if MC = MC $\implies$ x = x = 0, else $MC = MB \implies 7 - x \implies x = 7$\\
+Let $MC = x \to $ $S_1$(distane)\\
+$\iff AC = AM + x$\\
+$AM^2=AB^2+BM^2$ Note :  $BM = BC-MC(MC = x \iff BM = 7 - x$\\
+$AM^2=4^2+(7-x)^2 \iff AM = \sqrt{16+(7-x)^2} \to S_2$(distance)\\
+We get equation timer:\\
+$AM = \frac{\sqrt{16+(7-x)^2} }{6},MC=\frac{x}{10}$\\
+$AC = AM+MC=\frac{\sqrt{16+(7-x)^2} }{6} + \frac{x}{10}$\\
+ Let $AC=T(x) \implies T(x) = \frac{\sqrt{16+(7-x)^2} }{6} + \frac{x}{10}$ Note: $(A-B)^2=A^2-2AB+B^2$\\
+ \textbf{Consider:} $T(x) = \frac{\sqrt{x^2-14x+65} }{6} +  \frac{x}{10}$ \\
+ $T'(x)=\frac{2x-14}{12\sqrt{x^2-14x+65} } + \frac{1}{10}$ |Note: LCM(12,10) = 60\\
+ $=\frac{10x-70}{60\sqrt{x^2-14x+65} } + \frac{6\sqrt{x^2-14x+65} }{60\sqrt{x^2-14x+65} }$\\
+ $=\frac{10x-70+6\sqrt{x^2-14x+65} }{60\sqrt{x^2-14x+65}}$ \\
+ $T'(x)=0 \iff 10x-70+6\sqrt{x^2-14x+65}=0$ \\
+ $\iff 5x-35+3\sqrt{x^2-14x+65}=0 $ \\
+ $\iff 5x-35=-3\sqrt{x^2-14x+65}$ \\
+$\iff (5x-35)^2=9(x^2-14x+65)$\\
+$25x^2-350x+1225=9x^2-126x+585$\\
+ $16x^2-224x+640=0 \iff$
+ \begin{math}
+
+   \left[ \begin{array}{l}
+		   x = 10 \not\in [0;7]\\
+		   x = 4  \in [0;7]
+   \end{array} \right.  	
+ \end{math}
+ \begin{math}
+ 	T(0) = \frac{\sqrt{65} }{6}\\
+	T(4) = \frac{37}{30}\\
+	T(7) = \frac{41}{30}\\
+	\implies \min\limits_{[0;7]} T(x) = \frac{37}{30} \text {,at,} x = 4
+ \end{math} \\
+ \textbf{III.Homework}\\
+ \textbf{Sentence 1.} $\mathbb{D} = \R \implies f(x)$ continuous on the interval $[-1;2]$\\
+  $f'(x) = -4x^3 + 24x^2$\\
+   $f'(x) = 0 \iff $ 
+   \begin{math}
+   	\left[ \begin{array}{l}
+			x = 6 \not\in [-1;2]\\
+			x = 0 \in [-1;2]
+   	\end{array} \right. 
+   \end{math}\\
+$f(-1) = 12$\\ 
+ $f(2) = 33$\\
+ $f(0) = 1$\\
+ $\implies \max\limits_{[-1;2]}f(x) = 33$ at $x = 2$\\
+ \textbf{ Sentence2.} $\mathbb{D} = \R \implies f(x)$ continuous on the interval $[2;19]$\\ 
+ $f'(X) = 3x^2 -24$\\
+  $f'(x) = 0 \iff$
+  \begin{math}
+  	\left[ \begin{array}{l}
+			x = 2\sqrt{2} \in [2;19]\\
+			x = -2\sqrt{2} \not\in [2;19]
+  	\end{array} \right. 
+  \end{math}\\
+$f(2) = -40$\\
+ $f(19)=6403$\\
+ $f(2\sqrt{2})=-32\sqrt{2}$ \\
+ $\implies \min\limits_{[2;19]}f(x) = -32\sqrt{2}$ at $x=2\sqrt{2} $ \\
+ \textbf{Sentence 3.}$\mathbb{D} = \R$ $f(x)$ continuous on the interval $[\frac{1}{2};2]$ \\
+$y'=2x-\frac{2}{x^2}$ \\
+$y'=0 \iff $
+\begin{math}
+	\left[ \begin{array}{l}
+			x = 1 \in [\frac{1}{2};2]\\
+	    x = 0 \not\in [\frac{1}{2};2]
+	\end{array} \right. 
+\end{math}\\
+$y(\frac{1}{2})=\frac{17}{4}$ \\
+$y(2)=5$\\ 
+$y(1)=3$\\
+$\implies \min\limits_{[\frac{1}{2};2]}y=3$ at $x=1 \implies m = 3$\\
+\textbf{ Sentence 4.}
+$\mathbb{D}=\R \implies f(x)$ continuous on the interval $[0;\frac{\pi}{2}]$ \\
+$f'(x) = 1 -\sqrt{2}\sin x$\\
+$f'(x) = 0 \iff 1 = \sqrt{2}\sin x$\\
+$\implies \sin x = \frac{1}{\sqrt{2} } = \frac{\sqrt{2} }{2}(\text{Note: multiply with $\sqrt{2} $)} $ \\
+$\iff \sin x = \frac{\sqrt{2} }{2}$ \\
+$\iff x = \frac{\pi}{4} \in  [0;\frac{\pi}{2}](Note: \text{we know  $\sin (\frac{\pi}{4}) = \frac{2\sqrt{2} }{2} $})$\\
+$f(0) = \sqrt{2} $\\
+$f(\frac{\pi}{2})=\frac{\pi}{2}$ \\
+$f(\frac{\pi}{4}) =\frac{\pi}{4} + 1 $
+$\implies \min\limits_{[0;\frac{\pi}{2}]}f(x)=\sqrt{2}$ at $x=0$\\
+\textbf{Sentence 5.}\\
+Note: m is a constant
+$\mathbb{D} = \R \implies f(x)$ continuous on the interval $[-1;1]$\\
+ $y'=x^2-x$\\
+  $y'=0 \iff $
+  \begin{math}
+  	\left[ \begin{array}{l}
+			x = 1 \in [-1;1]\\
+			x= 0 \in  [-1;1]
+  	\end{array} \right. 
+  \end{math}\\
+  $f(-1) = -\frac{5}{6} + 2m = \frac{1}{6} \implies m = \frac{1}{2} \implies$ with $m =\frac{1}{2}\implies \min\limits_{[-1;1]}y = \frac{1}{6} $\\
+  \textbf{Sentence 6.}\\
+  $\mathbb{D} = \R \setminus \{3\} \implies$ continuous on the interval $[0;2]$\\
+ $y'= -\frac{3}{(x-3)^2} \implies y' < 0,\forall x \in \R /\{3\}$\\
+$y(0) = 0 $\\
+$y(2) = -2$\\
+$\implies \max\limits_{[0;2]}y = 0$ at $x=0$\\
+\textbf{Sentence 7.}\\
+$\mathbb{D} = \R \implies f(x)$ continuous on the interval $[0;\pi]$\\
+$f'(x) = 4(\sin x)^2 \cdot \cos x - \cos x$\\
+$= \cos x(4(\sin x)^2 - 1) = 0 \iff$
+\begin{math}
+	\left[ \begin{array}{l}
+	    \cos x = 0 \iff x = \frac{\pi}{2} + k\pi\\
+	    4(\sin x)^2 = 0 \iff (\sin x)^2 = \frac{1}{4} \iff \sin x = \pm \frac{1}{2} 
+\end{array} \right. 
+\end{math} $\iff$
+\begin{math}
+	\left[ \begin{array}{l}
+	    x = \frac{\pi}{2} + k\pi\\
+	    x = \frac{\pi}{6} + 2k\pi\\
+	    x = \frac{5\pi}{6} + 2k\pi\\
+	    x = \frac{7\pi}{6} + 2k\pi \not\in [0;\pi]\\
+	    x = \frac{11\pi}{6} + 2k\pi \not\in [0;\pi]
+	\end{array} \right. 
+\end{math}\\
+$f(\frac{\pi}{2}) =\frac{4}{3} $ \\
+$f(\frac{\pi}{6})=\frac{2}{3}$ \\
+$f(\frac{5\pi}{6})=\frac{2}{3}$ \\
+$\implies \frac{4}{3} + \frac{2}{3} = 2$\\
+\textbf{Sentence 8.}\\
+$\mathbb{D} = \R \implies y$ continuous on the interval $[-4;-1]$\\
+$y'=\frac{2x-4}{2\sqrt{x^2-4x}}$\\
+$y' = \frac{x-4}{\sqrt{x^2-4x}}$ \\
+$y' = 0 \iff \frac{x-4}{\sqrt{x^2-4x} }= 0 \iff$
+\begin{math}
+	\left[ \begin{array}{l}
+	    x - 4 = 0 \\
+	    x^2 - 4x \ge 0
+	\end{array} \right. 
+\end{math} $\iff$
+\begin{math}
+	\left[ \begin{array}{l}
+			x = 4 \not\in  [-1;-4]\\
+			x = 0 \not\in  [-1;-4]
+	\end{array} \right. 
+\end{math}\\
+$f(-4)=4\sqrt{2} $ \\
+$f(-1)=\sqrt{5} $ \\
+$\implies (4\sqrt{2})^2 + (\sqrt{5})^2 = 32 + 5 = 37   $\\
+\textbf{Sentence 9.}\\
+$\mathbb{D} = \R \implies y$ continuous on the interval $[-4;4]$\\
+ $y'=3x^2-9$ \\
+ $y'=0 \iff 3x^2-6x-9 = 0 \iff$
+ \begin{math}
+ 	\left[ \begin{array}{l}
+ 	    x = 3\\
+	    x = -1 
+ 	\end{array} \right. 
+ \end{math}\\
+ $f(-4)=-41$\\
+$ f(4)=15$\\
+$f(3)=8$ \\
+$f(-1)=40$\\
+$\implies M = 40, m = -41 \implies m + M = -41+40 =-1$\\
+\textbf{Sentence 10.}\\
+$\mathbb{D} = \R \setminus \{1\} \implies y$ continuous on the interval $[2;4]$\\
+ $y'=\frac{x^2-2x-3}{(x-1)^2}$ \\
+ $y'=0 \iff x^2-2x-3 = 0 \iff$
+ \begin{math}
+ 	\left[ \begin{array}{l}
+ 	   x =3 \\
+	   x =-1 \not\in  [2;4]
+ 	\end{array} \right. 
+ \end{math}\\
+ $y(2) =7 $\\
+ $y(4) =\frac{19}{3}$ \\
+ $y(3)=6$\\
+ $\implies \max\limits_{[2;4]}y =7 $ at $x = 2$\\
+ \textbf{Sentence 11.}\\
+ $\mathbb{D} = \R \implies y$ continuous on the interval $[1;3]$\\
+  $y'=3x^2-4x+3$\\
+   $y'=0 \iff$ no solution\\
+$f(1)=-2$\\
+$f(3)=14$\\
+ $\implies 14 -(-2) = 16$\\
+ \textbf{Sentence 12.}\\
+ $\mathbb{D} = \R \implies$ y continuous on the interval $[1;3]$\\
+  $y'=3x^2-6x-9$\\
+   $y'=0 \iff$ no solution\\
+   $f(-4)=-76$\\
+    $f(6)=54$ \\
+    $\implies 54 -(-76) = 130$\\
+\textbf{Sentence 13.Note: Be careful with the absolute value sign}\\
+$y = |(x-2)(x-3)| \iff$
+\begin{math}
+	\left[ \begin{array}{l}
+	    y = (x-2)(x-3)\\
+	    y = -(x-2)(x-3)
+	\end{array} \right. 
+\end{math} $\iff$
+\begin{math}
+	\left[ \begin{array}{l}
+	  y=x^2-6x+6\\
+	  y = -x^2+6x-6
+	\end{array} \right. 
+\end{math} $\iff$
+\begin{math}
+	\left[ \begin{array}{l}
+	    y' = 2x - 6\\
+	    y'=-2x+6
+	\end{array} \right. 
+\end{math} $\iff$
+\begin{math}
+	\left[ \begin{array}{l}
+			y' = 0 \iff x = 3 \in  [0;3]\\
+			y' = 0 \iff x = x = \in [0;3]
+	\end{array} \right. 
+\end{math}\\
+$y(0) = 6$\\
+ $y(3) = 0$\\
+ $\implies \max\limits_{[0;3]}y = 6$ at $x = 0$\\
+ \textbf{Sentence 14.}\\
+ $\mathbb{D} = \R \implies y $ continuous on the interval $[-2;3]$\\
+ $y' = 4x^3-8x$\\
+  $y'=0 \iff$
+  \begin{math}
+  	\left[ \begin{array}{l}
+			x = 0 \in [-2;3]\\
+			x = \pm  \sqrt{2} \in [-2;3]
+	\end{array} \right. 
+  \end{math}\\
+
+$y(0) = 9$\\
+ $y(-2)=9$ \\
+ $y(3)=54$\\
+  $y(\sqrt{2})=5 $ \\
+  $y(-\sqrt{2})=5 $\\
+  $\implies \max\limits_{[-2;3]} y = 54$ at $x=3$\\
+  \textbf{Sentence 15.}\\
+  $\mathbb{D} = \R \implies f(x)$ continuous on the interval $[-3;3]$\\
+   $f'(x) = 3x^2 - 3x$\\
+    $f'(x) = 0 \iff$
+    \begin{math}
+    	\left[ \begin{array}{l}
+			x = 1 \in  [-3;3]\\
+			x = 0 \in [-3;3]
+    	\end{array} \right. 
+    \end{math}\\
+ $f(-3)=-16$\\
+  $f(3)=20$\\
+   $f(0)=2$ \\
+   $f(1)=0$\\
+   $\implies \min\limits_{[-3;3]}f(x)=-16$ at $x=-3$\\
+   \textbf{Sentence 16.}\\
+   $\mathbb{D} = \R \setminus \{-2\}$\\
+  $y'= \frac{x^2+4x-5}{(x+2)^2}$ \\
+  $y'=0 \iff$
+  \begin{math}
+  	\left[ \begin{array}{l}
+	    x^2+4x-5=0
+  	\end{array} \right. 
+  \end{math} $\iff$
+\begin{math}
+	\left[ \begin{array}{l}
+			x = 1 \in [0;3]\\
+			x = -5 \not\in [0;3]
+	\end{array} \right. 
+\end{math}\\
+$y(0) = \frac{1}{2}$\\
+$y(3)=\frac{4}{5}$ \\
+$y(1)=0 $\\
+$\implies \max\limits_{[0;3]}y =\frac{4}{5}$ at $ x =3 $ \\
+\textbf{Sentence 17.}\\
+$\mathbb{D} = \R \setminus \{0\} \implies y$ continuous on the interval $[1;4]$\\
+$y' = 1  -\frac{9}{x^2}$\\
+$y'=0 \iff 1 = \frac{9}{x^2}$\\
+$\iff x^2 - 9 = 0 \iff$
+\begin{math}
+	\left[ \begin{array}{l}
+			x = 3  \in [1;4]\\
+			x = -3 \not\in [1;4]
+	\end{array} \right. 
+\end{math}\\
+$f(1)=10$\\
+$f(4)=\frac{25}{4}$ \\
+ $f(3)=6$\\
+  $\implies 6 + 10 = 16$\\
+  \textbf{Sentence 18.}\\
+  a) true beacause : \\
+  one print machine = 12 USD  $\implies x $ print machine = $12x$ USD \\
+  b) false beacause :\\
+  cost 1h = 9 USD $\implies$ cost $x$ hours =  $9 \cdot x$\\
+ c)true beacause :\\
+ \textbf{ we know :}\\
+ workload : 3000\\
+ cost $x$ machine :  $12x$\\
+Productivity $x$ machine :  $30x$\\
+$\implies$ Completion time = workload / productivity $\iff \frac{3000}{30x} = \frac{100}{x}$ \\
+$\implies$ Monitoring cost = cost 1 hour * completion time  $\iff 9 \cdot \frac{100}{x} = \frac{900}{x}$\\
+$\implies$ Total cost = $\frac{900}{x} + 12x$\\
+d)true beacause:\\
+Do same as question c), except the workload is 4000 and other problems\\
+$\implies \frac{4000}{30x} = \frac{400}{3x}$ \\
+$\implies 9 \cdot \frac{400}{3x} = \frac{1200}{x}$ \\
+$\implies \frac{1200}{x} + 12x$\\
+Let $c(x) = \frac{1200}{x} + 12x$ \\
+$c'(x) = -\frac{1200}{x^2} + 12$ \\
+$c'(x) = 0 \iff x =  10$\\
+we know $x \in [1;14]$\\
+$c(1) = 1212$\\
+ $c(14)= \frac{1776}{7}$ \\
+  $c(10)=240$\\
+  $\implies \min\limits_{[1;14]}c(x) = 240$ at $x = 10$\\
+  $\implies$ The minium production cost to print all the received publlication is : 240 (USD)
+\textbf{Sentence 19.}\\
+a) True beacause :\\
+30 minute = 0,5 half an hour $\implies c(0,5)=\frac{0,5}{(0,5)^2+1}=0,4$ \\
+b) false beacause :\\
+$\frac{t}{t^2+1}=0,3$\\
+$\iff 0,3t^2 - t + 0,3 = 0 \iff$
+\begin{math}
+	\left[ \begin{array}{l}
+	    t = \frac{1}{3}\\
+	    t = 3
+	\end{array} \right. 
+\end{math}\\
+$\implies t_{min} = \frac{1}{3}$ \\
+c) true beacause:\\
+$t > 0 \implies t \in (0;+\infty)$\\
+$c'(t)=\frac{1-t^2}{(t^2+1)^2}$ \\
+$c'(t)=0 \iff$
+\begin{math}
+	\left[ \begin{array}{l}
+			t = -1 \not\in (0;+\infty)\\
+			t = 1 \in (0;+\infty)
+	\end{array} \right. 
+\end{math}\\
+\begin{figure}[ht]
+    \centering
+    \incfig{figuare}
+    \caption{figuare}
+    \label{fig:figuare}
+\end{figure}\\
+$\implies \max\limits_{[0;+\infty]}c(t) = 0,5$ at $t = 1$\\
+d) true beacause 
+with $t= 1 \implies c(1) = 0,5$\\
+\textbf{Sentence 20:}\\
+\textbf{Note: You can use a Casio calculator to test each answer.}\\
+\textbf{Solve:}\\
+constraint: x > 5 $\implies x \in (5;+\infty)$\\
+$c'(x) = 2 - \frac{2}{(x-6)^2}$ \\
+$c'(x) = 0 \iff$
+\begin{math}
+	\left[ \begin{array}{l}
+	    x = 5 \not\in (5;+\infty)\\
+	    x = 7 \in (5;+\infty)
+	\end{array} \right. 
+\end{math}\\
+$\implies c(7) = 20$\\
+$\implies \min\limits_{(5;+\infty)}c(x) = 20$ at $x=7$\\
+\textbf{Sentence 21:}\\
+Let SB = $x \implies SA = 4-x ( 0 < x < 4) $\\
+$SC = \sqrt{1+x^2}$(Hypotenuse of triangle SBC)\\
+We know : $AC = SC + SA$\\ 
+Assume that:  $SA$ goes underground\\
+Let function cost is  $C(x)$\\
+We have:\\
+ $C(x) = 5000\sqrt{1+x^2}+3000(4-x) $ \\
+ $C'(x) = \frac{5000x}{\sqrt{1+x^2} } - 3000$ \\
+ $C'(x) = 0 \iff$
+ \begin{math}
+ 	\left[ \begin{array}{l}
+ 	    x = \frac{3}{4} \in (0;4)\\
+	    x = -\frac{3}{4} \not\in (0;4)
+ 	\end{array} \right. 
+ \end{math}\\
+Variation table:\\
+
+\begin{figure}[H]
+    \centering
+    \incfig{varvar}
+    \caption{varvar}
+    \label{fig:varvar}
+\end{figure}
+$\implies \min\limits_{(0;4)} C(x) = 16000$ at  $x = \frac{3}{4}$ \\
+$\implies SA = 4 - \frac{3}{4} = \frac{13}{4}$ \\
+\textbf{Sentence 22:}\\
+Sumize:\\
+give : 180m materials\\
+\textbf{Method 1: Using AM-GM inequality}\\
+Let $x$ is width of rectangle\\
+let  $y$ is length of rectangle\\
+ $\implies x + 2y = 180$\\
+ $\implies x = 180 -2y$\\
+$\implies S = (180-2y)\cdot y = \frac{1}{2}\cdot 2y\cdot (180-2y) \le \frac{1}{2} \cdot \frac{(2y+180-2y)^2}{4} = \frac{180^2}{8} = 4050$ \textbf{[Note:using technique AM-GM inequatity]}\\
+$S$ to max when inequality "="  $\implies 2y = 180-2y \implies y = 45$\\
+\textbf{Method 2:using derivatives}\\
+constraint: $0 < y < 90$\\
+Let $S(y)$ is function area\\
+ $\implies S(y) = (180-2y)\cdot y$\\
+ $\iff S(y) = -2y^2 + 180y$\\
+ $S'(y) = -4y + 180$\\
+ $S'(y) = 0 \iff y = 45$\\
+ Variation table:\\
+\begin{figure}[ht]
+    \centering
+    \incfig{var21}
+    \caption{var21}
+    \label{fig:var21}
+\end{figure}
+\\
+$\implies \max\limits_{(0;90)}S(y) = 4050$ at $y = 45$\\
+\textbf{Sentence 23:}\\
+\textbf{Method 1 : Using derivatives}\\
+Constraint: $a, x > 0$\\
+We know: $V = a^2 \cdot x \implies a = \sqrt{\frac{V}{x}}$ \\
+$S = S_p + S_t = 4 \cdot a \cdot h + 2 \cdot a^2 = 4\cdot \sqrt{\frac{V}{x}} \cdot x  + \frac{2V}{x}$\\
+$S = f(x) = 4 \cdot \sqrt{Vx} + \frac{2V}{x}$ \textbf{Note: $\frac{1}{\sqrt{x}} \cdot  x = \sqrt{x}, \frac{\sqrt{a} }{\sqrt{b} } = \sqrt{\frac{a}{b}}   $}\\
+Consider $f(x) = 4\cdot \sqrt{Vx} + \frac{2V}{x} $ \\
+$f'(x) = \frac{2V}{2\sqrt{Vx}} - \frac{2V}{x^2}$ \\
+$f'(x) = 0 \iff \frac{2V}{2\sqrt{Vx}} - \frac{2V}{x^2} = 0$ \\
+$\iff \frac{2V}{2\sqrt{Vx} } = \frac{2V}{x^2}$ \\
+$\iff \frac{V}{\sqrt{Vx} } = \frac{V}{x^2}$ \textbf{Note: $\div$ both sides by 2}\\
+$\iff Vx^2 = V\sqrt{Vx} $ \\
+$\iff x^2 = \sqrt{Vx} $ \textbf{Note: $\div$ both sides by V}\\
+$\iff x^4 = Vx$ \textbf{Note: square both sdes}\\
+$\iff x = V^{1/3}$ \textbf{Note: $a^n = b \implies a = b^{1/n}$}\\
++)Sign alnalys tips (chapter 1 - lecture 1):\\
+\begin{figure}[H]
+    \centering
+    \incfig{trick-table}
+    \caption{trick table}
+    \label{fig:trick-table}
+\end{figure}
+\textbf{Method 2: Using the AM-GM inequality}\\
+We have: \\
+$4 \cdot  \sqrt{Vx} + \frac{2V}{x} = \frac{2V}{x} + 2\sqrt{Vx} + 2\sqrt{Vx}  \ge 6 \sqrt[3]{V^2} $\\
+The equality $"="$ holds when $\frac{2V}{x} = 2\sqrt{Vx} \implies x = \sqrt[3]{V}$\\
+\textbf{Note:}\\
+1. As b = c, it suffices to compare a with b.)\\
+2. $\sqrt{x} = x^{\frac{1}{2}} $ \\
+\textbf{Sentence 24:}\\
+\textbf{Method 1: Using the deratives}\\
+$\to $ Make a rectangular gift box ( with a lid ) $\implies$ need to calculate $S = S_p + S_t$\\
+  $\to V = 200(cm^3) \iff 0,0002(m^3)$\\
+$\to h = 2(cm) \iff h = 0,02(m)$\\
+$\to l = x(cm) \iff \frac{x}{100}(m) (x>0)$ \\
+$\to V = w \cdot h \cdot l \implies w = \frac{V}{l\cdot h} = \frac{0,0002}{\frac{x}{100} \cdot 0,02} = \frac{1}{x}$\\
+$\to S = S_p + S_t = 2(lw+lh+wh)$\\
+$\to $ Let $S=f(x):$\\
+We consider  $f(x) = 2(\frac{x}{100} \cdot \frac{1}{x} + \frac{x}{100} \cdot 0,02 + \frac{1}{x} \cdot 0,02)$ \\
+$= 0,02 + 0,0004x + \frac{0,04}{x}$ \\
+$f'(x) = 0,0004- \frac{0,04}{x^2}$\\
+$f'(x) = 0 \iff$
+\begin{math}
+	\left[ \begin{array}{l}
+	    x = 10 \in (0; +\infty)\\
+	    x = -10 \not\in (0; +\infty)
+	\end{array} \right. 
+\end{math}\\
+
+\begin{figure}[H]
+    \centering
+    \incfig{variation-table}
+    \caption{VARIATION TABLE}
+    \label{fig:variation-table}
+\end{figure}
+\textbf{Method 2: Using the AM-GM inequality}\\
+We have: $A = 0,02 + 0,0004x + \frac{0,04}{x}$ \\
+(Do not select the const) $\implies 0,0004x + \frac{0,04}{x} \ge 2\sqrt{0,0004x \cdot \frac{0,04}{x}} = 0,008 $ \\
+Thus: $A = 0,02 + 0,0004x + \frac{0,04}{x} \ge 0,02 + 0,008 = 0,028$\\
+The equality "=" holds when : $0,0004x = \frac{0,04}{x} \implies x = 10$ (beacause $x>0$)
+
+
+
+
+ \end{document}
+
+
